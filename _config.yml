@@ -32,3 +32,5 @@ kramdown:
 
 disqus:
     shortname: janegilring
+  
+google_analytics: UA-91558051-1
