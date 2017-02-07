@@ -23,17 +23,17 @@ site hosting service, which means no server-side code such as PHP or any data st
 **GitHub Pages**
 
 Getting started is very easy, as explained on the [GitHub Pages](https://pages.github.com/) website:  
->1. *Create a repository*: Head over to GitHub and create a new repository named username.github.io, where username is your username (or organization name) on GitHub.  
->2. *Clone the repository*: Go to the folder where you want to store your project, and clone the new repository:  
->git clone https://github.com/username/username.github.io  
->3. *Hello World*: Enter the project folder and add an index.html file:  
->4. *Push it*  
->Add, commit, and push your changes:  
->$git add --all  
->~$git commit -m "Initial commit"  
->~$git push -u origin master  
->5. *…and you're done!*  
->Fire up a browser and go to http://username.github.io.  
+1. *Create a repository*: Head over to GitHub and create a new repository named username.github.io, where username is your username (or organization name) on GitHub.  
+2. *Clone the repository*: Go to the folder where you want to store your project, and clone the new repository:  
+git clone https://github.com/username/username.github.io  
+3. *Hello World*: Enter the project folder and add an index.html file:  
+4. *Push it*  
+Add, commit, and push your changes:  
+$git add --all  
+~$git commit -m "Initial commit"  
+~$git push -u origin master  
+5. *…and you're done!*  
+Fire up a browser and go to http://username.github.io.  
 
 This means you can publish plain HTML-pages to a GitHub repository, and GitHub Pages will make them available as a website.
 Very simple. But that`s not all, it provides far more feature with the tight integration with [Jekyll](https://help.github.com/articles/about-github-pages-and-jekyll/):  
