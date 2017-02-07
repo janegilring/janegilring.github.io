@@ -35,7 +35,7 @@ $git add --all
 Fire up a browser and go to http://username.github.io.  
 
 This means you can publish plain HTML-pages to a GitHub repository, and GitHub Pages will make them available as a website.
-Very simple. But that`s not all, it provides far more feature with the tight integration with [Jekyll](https://help.github.com/articles/about-github-pages-and-jekyll/):
+Very simple. But that`s not all, it provides far more feature with the tight integration with [Jekyll](https://help.github.com/articles/about-github-pages-and-jekyll/):  
 *GitHub Pages is deeply integrated with Jekyll, a popular static site generator designed for blogging and software documentation, but used for much more. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers advanced templating features, the option to quickly create a new Jekyll site with the Jekyll Theme Chooser, and Jekyll theme support.
 
 The main advantages of Jekyll are:  
