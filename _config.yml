@@ -21,6 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.powershell.no" # the base hostname & protocol for your site
 twitter_username: janegilring
 github_username:  janegilring
+linkedin_username:  janegilring
 
 # Build settings
 markdown: kramdown
