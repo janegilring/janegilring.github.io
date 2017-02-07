@@ -6,7 +6,7 @@ permalink: /about/
 
 Jan Egil works as a Lead Architect at Crayon, Norway.
 
-![alt](_images/Jan Egil Ring.png)
+![alt](images/Jan Egil Ring.png)
 
 He mainly works with automation, and has a strong passion for PowerShell. 
 
