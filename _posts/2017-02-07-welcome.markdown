@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "Welcome to Jan Egil Ring`s blog!"
+date:   2017-02-07 17:31:40 +0200
+categories: general
+---
+In the past, I've always used Wordpress for blogging. At first, I used a blog account hosted at 
+wordpress.com before migrating it to a Wordpress-instance in my Azure MSDN subscriptiopn.
+As you might know I've blogged at blog.powershell.no for many years, but on March 4th 2014 I was 
+honored to  join PowerShell Magazine as a contributing editor.
+Due to that, my PowerShell related articles was being published there going forward. However, I still
+need a place to post more personal content such as conference slides & other information.
+For a long time I've been thinking about brushing up the design on blog.powershell.no, but as 
+I've learned more about GitHub Pages and the simplicity it provides over a full Content
+Management System such as Wordpress - I`ve decided to go that route.
+
+As I've been using Git and GitHub more and more over the past years, I've also learned how easy
+it is to work with Markdown.
+
+1) Create a repository
+Head over to GitHub and create a new repository named username.github.io, where username is your username (or organization name) on GitHub.
+
+2) Clone the repository
+Go to the folder where you want to store your project, and clone the new repository:
+git clone https://github.com/username/username.github.io
+
+3) Hello World
+Enter the project folder and add an index.html file:
+
+4) Push it
+Add, commit, and push your changes:
+$git add --all
+~$git commit -m "Initial commit"
+~$git push -u origin master
+
+5) …and you're done!
+Fire up a browser and go to http://username.github.io.
+
+
+Using Jekyll, you can blog using beautiful Markdown syntax, and without having to deal with any databases. Learn how to set up Jekyll.
+
+https://help.github.com/categories/20/articles
