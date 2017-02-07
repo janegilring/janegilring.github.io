@@ -13,10 +13,12 @@ puts markdown.to_html
 ```
 
 ```powershell
+
 Install-Module PsHosts -Force
 Import-Module PsHosts
 Uninstall-Module -Name NIC.ServerDeployment
 Remove-Module -Name NIC.ServerDeployment
+
 ```
 
 ```PowerShell
@@ -31,7 +33,8 @@ foreach ($a in $array) {
 
 ```
 
-
-{% gist 5555251 %}
+test before
 
 {% gist 78e805b06fbfd0a86c4522505dcd5020 %}
+
+test after
