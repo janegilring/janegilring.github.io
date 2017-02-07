@@ -29,3 +29,6 @@ theme: minima
 
 kramdown:
   syntax_highlighter: rouge
+
+disqus:
+    shortname: janegilring
