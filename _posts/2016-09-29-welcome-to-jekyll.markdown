@@ -18,3 +18,15 @@ Import-Module PsHosts
 Uninstall-Module -Name NIC.ServerDeployment
 Remove-Module -Name NIC.ServerDeployment
 ```
+
+```PowerShell
+
+Get-Process -Name svchost
+
+foreach ($a in $array) {
+
+    $a
+
+}
+
+```
