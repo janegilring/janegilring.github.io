@@ -30,3 +30,8 @@ foreach ($a in $array) {
 }
 
 ```
+
+
+{% gist 5555251 %}
+
+{% gist 78e805b06fbfd0a86c4522505dcd5020 %}
