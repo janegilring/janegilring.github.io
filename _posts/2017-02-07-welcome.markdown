@@ -4,39 +4,52 @@ title:  "Welcome to Jan Egil Ring`s blog!"
 date:   2017-02-07 17:31:40 +0200
 categories: general
 ---
-In the past, I've always used Wordpress for blogging. At first, I used a blog account hosted at 
-wordpress.com before migrating it to a Wordpress-instance in my Azure MSDN subscriptiopn.
-As you might know I've blogged at blog.powershell.no for many years, but on March 4th 2014 I was 
+
+**Welcome**
+
+In the past, I've always used Wordpress for blogging. 
+At first, I used a blog account hosted at wordpress.com before migrating it to a Wordpress-instance in my Azure MSDN subscriptiopn.
+As you might know I've blogged at [blog.powershell.no](http://blog.powershell.no) for many years, but on March 4th 2014 I was 
 honored to  join PowerShell Magazine as a contributing editor.
-Due to that, my PowerShell related articles was being published there going forward. However, I still
-need a place to post more personal content such as conference slides & other information.
-For a long time I've been thinking about brushing up the design on blog.powershell.no, but as 
-I've learned more about GitHub Pages and the simplicity it provides over a full Content
-Management System such as Wordpress - I`ve decided to go that route.
+Due to that, my PowerShell related articles was being published there going forward. 
+However, I still need a place to post more personal content such as conference slides & other information.
+Back then I decided to continue to use [blog.powershell.no](http://blog.powershell.no) for that purpose.
+For a long time I've been thinking about brushing up the design that site, but as 
+I've learned more about [GitHub Pages](https://pages.github.com/) and the simplicity it provides over a full Content
+Management System such as [Wordpress](https://en.wikipedia.org/wiki/WordPress) - I`ve decided to go that route. GitHub Pages is a static 
+site hosting service, which means no server-side code such as PHP or any data stored in databases such as MySQL.
 
-As I've been using Git and GitHub more and more over the past years, I've also learned how easy
-it is to work with Markdown.
-
-1) Create a repository
-Head over to GitHub and create a new repository named username.github.io, where username is your username (or organization name) on GitHub.
-
-2) Clone the repository
-Go to the folder where you want to store your project, and clone the new repository:
+Getting started is very easy, as explained on the [GitHub Pages](https://pages.github.com/) website:
+1. *Create a repository*: Head over to GitHub and create a new repository named username.github.io, where username is your username (or organization name) on GitHub.
+2. *Clone the repository*: Go to the folder where you want to store your project, and clone the new repository:
 git clone https://github.com/username/username.github.io
-
-3) Hello World
-Enter the project folder and add an index.html file:
-
-4) Push it
+3. *Hello World*: Enter the project folder and add an index.html file:
+4. *Push it*
 Add, commit, and push your changes:
 $git add --all
 ~$git commit -m "Initial commit"
 ~$git push -u origin master
-
-5) …and you're done!
+5. *…and you're done!*
 Fire up a browser and go to http://username.github.io.
 
+This means you can publish plain HTML-pages to a GitHub repository, and GitHub Pages will make them available as a website.
+Very simple. But that`s not all, it provides far more feature with the tight integration with [Jekyll](https://help.github.com/articles/about-github-pages-and-jekyll/):
+> GitHub Pages is deeply integrated with Jekyll, a popular static site generator designed for blogging and software documentation, but used for much more. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers advanced templating features, the option to quickly create a new Jekyll site with the Jekyll Theme Chooser, and Jekyll theme support.
 
-Using Jekyll, you can blog using beautiful Markdown syntax, and without having to deal with any databases. Learn how to set up Jekyll.
+*The main advantages of Jekyll are:
+-You can use Markdown instead of HTML. Markdown is simpler to read and write.
+-You can add a Jekyll theme to your site without copying CSS files.
+-You can quickly create a new site using the Jekyll Theme Chooser.
+-You can use common templates, such as headers and footers, that are shared across files.
+-You can use a simplified build process to build your site with GitHub Pages.*
 
-https://help.github.com/categories/20/articles
+As I've been using Git and GitHub more and more over the past years, I've also learned how easy
+it is to work with [Markdown](https://en.wikipedia.org/wiki/Markdown). This means I can simply use the Markdown editor of 
+my choice, write posts and publish them to a GitHub repository. I`m using Visual Studio Code for this, due to the excellent 
+support both for Git and Markdown.
+
+I have decided to leave blog.powershell.no as-is so that existing articles will still be available, and start off fresh with 
+www.powershell.no as the URL for the new site built on GitHub Pages. In addition to publishing announcements and conference 
+notes as I did for the past few years on blog.powershell.no, I plan to do some technical articles as well. I often work with topics in my day-job I plan to write about, 
+but don`t find time for. I`ll try to be better at getting short articles covering such topics here.
+Longer articles with more in-depth content will be published on PowerShell Magazine as usual.
