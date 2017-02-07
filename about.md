@@ -4,12 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+Jan Egil Ring works as a Lead Architect on the Infrastructure Team at Crayon, Norway.
+He mainly works with Microsoft server-products, and has a strong passion for Windows PowerShell. In addition to being a consultant, he is a Microsoft Certified Trainer.
+He has obtained several certifications such as MCITP: Enterprise Administrator  and MCITP: Enterprise Messaging Administrator.
+In January 2011, he was awarded the Microsoft Most Valuable Professional Award for his contributions in the Windows PowerShell technical community.
+His engagements as a speaker includes TechDays in Norway, a Microsoft Office 365 bootcamp for Microsoft partners in Norway as well as the Nordic Infrastrucure Conference.
+He is a co-founder of the Norwegian Microsoft Technology User Group (MTUG), which is an assosication of local MTUG user groups in Norway. He is also co-organizing the MTUG Script Club which focuses mainly on Windows PowerShell.
+His intentions with this blog is to share experiences based on various projects and troubleshooting, as well as sharing different resource links to technologies he works with.
