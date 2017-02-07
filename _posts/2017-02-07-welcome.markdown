@@ -23,29 +23,29 @@ site hosting service, which means no server-side code such as PHP or any data st
 **GitHub Pages**
 
 Getting started is very easy, as explained on the [GitHub Pages](https://pages.github.com/) website:  
-1. *Create a repository*: Head over to GitHub and create a new repository named username.github.io, where username is your username (or organization name) on GitHub.  
-2. *Clone the repository*: Go to the folder where you want to store your project, and clone the new repository:  
-git clone https://github.com/username/username.github.io  
-3. *Hello World*: Enter the project folder and add an index.html file:  
-4. *Push it*  
-Add, commit, and push your changes:  
-$git add --all  
-~$git commit -m "Initial commit"  
-~$git push -u origin master  
-5. *…and you're done!*  
-Fire up a browser and go to http://username.github.io.  
+>1. *Create a repository*: Head over to GitHub and create a new repository named username.github.io, where username is your username (or organization name) on GitHub.  
+>2. *Clone the repository*: Go to the folder where you want to store your project, and clone the new repository:  
+>git clone https://github.com/username/username.github.io  
+>3. *Hello World*: Enter the project folder and add an index.html file:  
+>4. *Push it*  
+>Add, commit, and push your changes:  
+>$git add --all  
+>~$git commit -m "Initial commit"  
+>~$git push -u origin master  
+>5. *…and you're done!*  
+>Fire up a browser and go to http://username.github.io.  
 
 This means you can publish plain HTML-pages to a GitHub repository, and GitHub Pages will make them available as a website.
 Very simple. But that`s not all, it provides far more feature with the tight integration with [Jekyll](https://help.github.com/articles/about-github-pages-and-jekyll/):  
 
-*GitHub Pages is deeply integrated with Jekyll, a popular static site generator designed for blogging and software documentation, but used for much more. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers advanced templating features, the option to quickly create a new Jekyll site with the Jekyll Theme Chooser, and Jekyll theme support.
-
-The main advantages of Jekyll are:  
--You can use Markdown instead of HTML. Markdown is simpler to read and write.  
--You can add a Jekyll theme to your site without copying CSS files.  
--You can quickly create a new site using the Jekyll Theme Chooser.  
--You can use common templates, such as headers and footers, that are shared across files.  
--You can use a simplified build process to build your site with GitHub Pages.*
+>GitHub Pages is deeply integrated with Jekyll, a popular static site generator designed for blogging and software documentation, but used for much more. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers advanced templating >features, the option to quickly create a new Jekyll site with the Jekyll Theme Chooser, and Jekyll theme support.
+>
+>The main advantages of Jekyll are:  
+>-You can use Markdown instead of HTML. Markdown is simpler to read and write.  
+>-You can add a Jekyll theme to your site without copying CSS files.  
+>-You can quickly create a new site using the Jekyll Theme Chooser.  
+>-You can use common templates, such as headers and footers, that are shared across files.  
+>-You can use a simplified build process to build your site with GitHub Pages.
 
 As I've been using Git and GitHub more and more over the past years, I've also learned how easy
 it is to work with [Markdown](https://en.wikipedia.org/wiki/Markdown). This means I can simply use the Markdown editor of 
