@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Jan Egil Ring
-email: janegilring@noreply.github.com
+title: Jan Egil Ring | powershell.no
+email: jan.egil.ring@powershell.no
 description: > # this means to ignore newlines until "baseurl:"
   Jan Egil Ring`s blog about technology
 baseurl: "" # the subpath of your site, e.g. /blog
