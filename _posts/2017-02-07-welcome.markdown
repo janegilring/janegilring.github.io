@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jan Egil Ring`s blog!"
 date:   2017-02-07 17:31:40 +0200
-comments: false
+comments: true
 categories: general
 ---
 
@@ -56,5 +56,5 @@ support both for Git and Markdown.
 I have decided to leave blog.powershell.no as-is so that existing articles will still be available, and start off fresh with 
 www.powershell.no as the URL for the new site built on GitHub Pages. In addition to publishing announcements and conference 
 notes as I did for the past few years on blog.powershell.no, I plan to do some technical articles as well. I often work with topics in my day-job I plan to write about, 
-but don`t find time for. I`ll try to be better at getting short articles covering such topics here.
+but don't find time for. I`ll try to be better at getting short articles covering such topics here.
 Longer articles with more in-depth content will be published on PowerShell Magazine as usual.
