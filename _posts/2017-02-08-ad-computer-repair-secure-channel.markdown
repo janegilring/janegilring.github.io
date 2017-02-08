@@ -6,7 +6,7 @@ comments: true
 categories: ActiveDirectory
 ---
 
-**Problem**
+**Challenge**
 
 Just like user accounts, computer accounts in Active Directory also has passwords that the computers  
  use to authenticate to the domain controllers in the domain. A difference is that we never see the  
