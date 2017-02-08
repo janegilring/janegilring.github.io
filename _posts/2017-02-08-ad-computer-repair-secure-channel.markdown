@@ -36,7 +36,8 @@ You may also add the -Verbose switch parameter to get additional information:
 ![alt](/images/Test-ComputerSecureChannel_02.png)
 
 Let`s assume that someone have added a computer with the same name to the domain. When trying to  
-logon to the existing computer using a domain account, we will receive the following error:  
+logon to the existing computer using a domain account, we will receive the error *"The trust 
+relationship between this workstation and the primary domain failed”*:  
 
 ![alt](/images/Test-ComputerSecureChannel_03.png)
 
