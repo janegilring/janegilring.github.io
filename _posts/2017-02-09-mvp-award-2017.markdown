@@ -29,18 +29,19 @@ I feel very honored and privileged to have been part of the MVP program for this
 ![alt](/images/2017-02-09_MVP_Award_2017.jpg)
 
 It is very pleasant to be able to share knowledge with the community by writing articles, speaking  
-at and organizing user group meetings. On the other hand, it is also rewarding due to getting  
-the chance to interact both with Microsoft employees (especially the PowerShell team) and other  
-MVPs.
+at and organizing user group meetings as well as various other contributions such as PowerShell  
+modules. On the other hand, it is also rewarding due to getting the chance to interact both with 
+ Microsoft employees (especially the PowerShell team) and other MVPs.
 
 The 2016 Microsoft MVP Summit in Redmond was a highlight last year, where I got to meet both existing  
 and new friends from the community in person.
 Also, a fun thing happened during the last session of the conference, where I was in luck of winning 
 [Jeffrey Snover`s](https://en.wikipedia.org/wiki/Jeffrey_Snover) tie (I believe this was the first  
-tie he used when speaking at a conference) at a lottery (thanks, Get-Random!) :
+tie he used when speaking at a conference) at a lottery:
 
 ![alt](/images/2017-02-09_MVP_Award_2017_03.jpg)
 
+Thanks, Get-Random!
 ![alt](/images/2017-02-09_MVP_Award_2017_04.jpg)
 
 I also got the chance to get it signed and chat with Jeffrey later that day:
