@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "2017 Microsoft MVP Award"
+date:   2017-02-09 19:04:00 +0200
+comments: true
+categories: announcements
+---
+
+January 1st I got the following e-mail from Microsoft:
+
+![alt](/images/2017-02-09_MVP_Award_2017.png)
+
+
+On February 1st, Microsoft [announced on the MVP Award blog](https://blogs.msdn.microsoft.com/mvpawardprogram/2017/02/01/microsoft-mvp-award-evolution/) that there will be some changes to the program:
+
+> Since we started to challenge our award cycles, we went ahead and challenged everything about them.  
+For the past several years, the MVP Award Program has had four quarterly cycles where we both 
+ onboarded new MVPs and re-awarded existing MVPs.  Because of that, MVPs identify themselves as  
+ “January MVPs” or “April MVP”. We’d like to simplify things and move to a more unified program   
+ that provides a consistent experience to all our MVPs.
+That’s why, starting July 1st 2017, we’ll be celebrating all our renewing MVPs with just one annual 
+ award cycle.  Everyone will snap to that cycle.
+
+This means that my current award will be valid until July 1st 2017, which is the new annual award  
+cycle.
+
+I feel very honored and privileged to have been part of the MVP program for this many years:
+
+![alt](/images/2017-02-09_MVP_Award_2017.jpg)
+
+It is very pleasant to be able to share knowledge with the community by writing articles, speaking  
+at and organizing user group meetings. On the other hand, it is also rewarding due to getting  
+the chance to interact both with Microsoft employees (especially the PowerShell team) and other  
+MVPs.
+
+The 2016 Microsoft MVP Summit in Redmond was a highlight last year, where I got to meet both existing  
+and new friends from the community in person.
+Also, a fun thing happened during the last session of the conference, where I was in luck of winning 
+[Jeffrey Snover`s](https://en.wikipedia.org/wiki/Jeffrey_Snover) tie (I believe this was the first  
+tie he used when speaking at a conference) at a lottery (thanks, Get-Random!) :
+
+![alt](/images/2017-02-09_MVP_Award_2017_03.jpg)
+
+![alt](/images/2017-02-09_MVP_Award_2017_04.jpg)
+
+I also got the chance to get it signed and chat with Jeffrey later that day:
+
+![alt](/images/2017-02-09_MVP_Award_2017_02.jpg)
