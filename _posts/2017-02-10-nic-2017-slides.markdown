@@ -6,7 +6,7 @@ comments: true
 categories: announcements
 ---
 
-The [Nordic Infrastructure Conference (NIC)](http://www.nicconf.com/) conference was arranged for the 6th time  
+The [Nordic Infrastructure Conference (NIC)](http://www.nicconf.com/) was arranged for the 6th time  
 in Oslo, Norway on Wednesday 1st to Friday 3rd of February 2017. There was a number  
 of great [sessions](http://www.nicconf.com/agenda) being presented by many [industry experts](http://www.nicconf.com/speakers). 
     
