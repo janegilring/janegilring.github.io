@@ -10,14 +10,18 @@ The [Nordic Infrastructure Conference (NIC)](http://www.nicconf.com/) conference
 in Oslo, Norway on Wednesday 1st to Friday 3rd of February 2017. There was a number  
 of great [sessions](http://www.nicconf.com/agenda) being presented by many [industry experts](http://www.nicconf.com/speakers). 
     
+    
 ![alt](/images/2017-02-10_NIC2017_01.png)
   
+
 I had a great time co-presenting two sessions where we talked about DevOps and Nano Server. Slides and demos from both sessions is available here:
   
+
 | Title          | Speakers           | Slides and demos  |
 | -------------  |-------------| -----|
 | DevOps for Ops - Automate All the Things      | Jan Egil Ring & Øyvind Kallstad | [Link](https://github.com/janegilring/Presentations/tree/master/nicconf2017/DevOps%20for%20Ops%20-%20Automate%20All%20the%20Things) |
 | Nano Server Management for GUI Lovers         | Aleksandar Nikolic & Jan Egil Ring      |   [Link](https://github.com/janegilring/Presentations/tree/master/nicconf2017/Nano%20Server%20Management%20for%20GUI%20Lovers) |
   
+
 I will update the post with links to videos and slides from other presentations as soon as they are  
 available. You can follow [@NICConf](http://www.twitter.com/NICConf) on Twitter for the latest updates.
