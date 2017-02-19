@@ -159,18 +159,18 @@ This object can be fed into the Connect-Tesla command:
 This way, we can authenticate to the MyTesla API unattended.
 
 1) Run through step 1-3 in the section "Controlling your Tesla vehicle from PowerShell" on the computer  
-you want to run the scheduled task from.
+you want to run the scheduled task from.  
 2) Create a .ps1-file with the script you want to schedule and store it locally, for example as *C:\Scripts\Start-TeslaHeating.ps1*.  
 If you don't want to start from scratch you may copy and optionally customize the script you want  
-to use from my [Git repository](https://github.com/janegilring/Tesla/tree/master/Scripts)
-3) Create and export credentials for your MyTesla account as described above
-4) Run the script manually once to make sure it works
+to use from my [Git repository](https://github.com/janegilring/Tesla/tree/master/Scripts)  
+3) Create and export credentials for your MyTesla account as described above  
+4) Run the script manually once to make sure it works  
 5) [Create a scheduled task](http://www.metalogix.com/help/Content%20Matrix%20Console/SharePoint%20Edition/002_HowTo/004_SharePointActions/012_SchedulingPowerShell.htm) to run the script on the schedule you want, for example weekdays at 7 AM.
 
 
 **Option 2 - runbook in Azure Automation**
 
-1) [Create an Azure account](https://azure.microsoft.com/en-us/free/) if you don't have one (it`s free)
+1) [Create an Azure account](https://azure.microsoft.com/en-us/free/) if you don't have one (it`s free)  
 2) Create an Azure Automation account if you don't have one. To do this, login to portal.azure.com  
 and find Automation Accounts in the menu on the left (you might need to go to More service at the  
 bottom and search for it). At this point you should be presented with the frontpage for your  
