@@ -157,6 +157,7 @@ This object can be fed into the Connect-Tesla command:
 *Connect-Tesla -Credential $MyTeslaCredential*
 
 This way, we can authenticate to the MyTesla API unattended.
+Now that you know how to setup credentials for MyTesla, you can proceed to creating the scheduled task:  
 
 1) Run through step 1-3 in the section "Controlling your Tesla vehicle from PowerShell" on the computer  
 you want to run the scheduled task from.  
@@ -172,7 +173,7 @@ to use from my [Git repository](https://github.com/janegilring/Tesla/tree/master
 
 1) [Create an Azure account](https://azure.microsoft.com/en-us/free/) if you don't have one (it`s free)  
 2) Create an Azure Automation account if you don't have one. To do this, login to portal.azure.com  
-and find Automation Accounts in the menu on the left (you might need to go to More service at the  
+and find Automation Accounts in the menu on the left (you might need to go to More services at the  
 bottom and search for it). At this point you should be presented with the frontpage for your  
 Automation Account:
 
