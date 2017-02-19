@@ -13,7 +13,7 @@ Many Tesla owners use this to pre-heat or pre-cool the cabin remotely before usi
 A frequently requested but missing feature is the ability to schedule the state of the climate control system.
 
 
-![alt](/images/Tesla-logo.png){:height="150px" width="165px"}
+![alt](/images/Tesla-logo.png){:height="150px" width="200px"}
 
 
 # Solution
