@@ -182,7 +182,7 @@ In this context we are going to leverage 2 of the available options: Runbooks an
 
 3. Go into Assets:
 
-![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="281px" width="700px"}
+![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="578px" width="700px"}
 
 4. Go into Credentials:
 
@@ -206,10 +206,10 @@ Click Save and then Publish when the script is pasted and customized.
 ![alt](/images/2017-02-19_Tesla_PowerShell_11.png){:height="309px" width="600px"}
 
 Click on Schedules->Add a schedule->Link a schedule to your runbook->Create a new schedule:
-![alt](/images/2017-02-19_Tesla_PowerShell_12.png)
+![alt](/images/2017-02-19_Tesla_PowerShell_12.png){:height="579px" width="550px"}
 
-Customize it to suit your requirements and click OK->Create->OK
-Close Schedules to go back to the runbook's main page.
+Customize it to suit your requirements and click OK->Create->OK  
+Close Schedules to go back to the runbook's main page.  
 
 8. Click Start to manually test that the runbook works as intended. Click OK on the prompt as we  
 do not have any parameters to specify, and we want to run it in a sandbox environment in Azure.
