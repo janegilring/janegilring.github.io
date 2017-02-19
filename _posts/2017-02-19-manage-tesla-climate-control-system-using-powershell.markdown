@@ -118,7 +118,7 @@ to start and stop auto conditioning.
 
 {% gist 1af6d498f02abcfa43129d75fee3ff3a %}
 
-Since we are using PowerShell, only the imagiation can limit what criterias we  
+Since we are using PowerShell, only the imagination can limit what criterias we  
 can use before executing a command such as starting or stopping heating.
 For example, we have already seen how we can get information about the current  
 climate state fromt he vehicle including the outside temperature.  
@@ -130,14 +130,15 @@ heating only if the outside temperature is below a given value.
 I have created a [repository on GitHub](https://github.com/janegilring/Tesla) for storing examples on how you can use  
 PowerShell to manage your Tesla vehicle.  
 This will be updated over time with more examples, and hopefully others will contribute  
-as well. If you have any suggestions for new features, feel free to submit an [issue](https://github.com/janegilring/Tesla/issues) issue  
+as well. If you have any suggestions for new features, feel free to submit an [issue](https://github.com/janegilring/Tesla/issues)  
 on the GitHub repository.
 
 *Option 1 - scheduled task in Windows*
 
 *Option 2 - runbook in Azure Automation*
 
-*Option 3 - others*
+*Option 3 - others*  
+
 Scheduled tasks and scheduled Azure Automation runbooks is examples from my side,  
 there are a number of other options available for scheduling PowerShell scripts.  
 Feel free to leave your suggestions in the comment field below. Maybe you did something  
