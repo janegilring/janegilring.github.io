@@ -8,7 +8,7 @@ categories: HomeAutomation
 
 # Challenge
 
-![alt](/images/Tesla-logo.png){:height="150px" width="186px"}
+![alt](/images/Tesla-logo.png){:height="186px" width="150px"}
 
 Tesla's vehicles has a climate control system which can be remotely managed from the company`s mobile app.  
 Many Tesla owners use this to pre-heat or pre-cool the cabin remotely before using the car.  
@@ -97,14 +97,14 @@ Now the module is installed and is ready to be used.
 Here is an example on how to explore the available commands and authenticate using your MyTesla  
 credentials:
 
-![alt](/images/2017-02-19_Tesla_PowerShell_01.png){:height="500px" width="244px"}
+![alt](/images/2017-02-19_Tesla_PowerShell_01.png){:height=317"px" width="650px"}
   
-Next, we can run the API command get_climate to get the current climate settings:
+Next, we can run the API command climate_state to get the current climate settings:
 
-![alt](/images/2017-02-19_Tesla_PowerShell_02.png){:height="320px" width="328px"}
+![alt](/images/2017-02-19_Tesla_PowerShell_02.png){:height="328px" width="320px"}
   
 Here we can see that we have two API calls for starting and stopping the auto conditioning:
-![alt](/images/2017-02-19_Tesla_PowerShell_03.png){:height="500px" width="245px"}
+![alt](/images/2017-02-19_Tesla_PowerShell_03.png){:height="245px" width="500px"}
 
 Based on what we have seen so far, we have enough information to create a simple script to start and 
 stop auto conditioning:
@@ -172,17 +172,17 @@ and find Automation Accounts in the menu on the left (you might need to go to Mo
 bottom and search for it). At this point you should be presented with the frontpage for your  
 Automation Account:
 
-![alt](/images/2017-02-19_Tesla_PowerShell_09.png){:height="700px" width="281px"}
+![alt](/images/2017-02-19_Tesla_PowerShell_09.png){:height="281px" width="700px"}
 
 In this context we are going to leverage 2 of the available options: Runbooks and Assets.
 
 3. Go into Assets:
 
-![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="700px" width="281px"}
+![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="281px" width="700px"}
 
 4. Go into Credentials:
 
-![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="600px" width="496px"}
+![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="496px" width="600px"}
 
 5. Click *Add a credential* at the top and create a credential asset for your MyTesla account.  
 Remember the name of the asset, as we need to specify the name in the runbook we will create next.
@@ -199,7 +199,7 @@ To leverage the credential asset we created in step 4, add this line to your scr
 Click Save and then Publish when the script is pasted and customized.
 
 7. You should now be on the main page for your new runbook:
-![alt](/images/2017-02-19_Tesla_PowerShell_11.png){:height="600px" width="309px"}
+![alt](/images/2017-02-19_Tesla_PowerShell_11.png){:height="309px" width="600px"}
 
 Click on Schedules->Add a schedule->Link a schedule to your runbook->Create a new schedule:
 ![alt](/images/2017-02-19_Tesla_PowerShell_12.png)
@@ -210,7 +210,7 @@ Close Schedules to go back to the runbook's main page.
 8. Click Start to manually test that the runbook works as intended. Click OK on the prompt as we  
 do not have any parameters to specify, and we want to run it in a sandbox environment in Azure.
 When the Job window opens you can click on Output to show the output from the runbook:
-![alt](/images/2017-02-19_Tesla_PowerShell_11.png){:height="650px" width="329px"}
+![alt](/images/2017-02-19_Tesla_PowerShell_11.png){:height="329px" width="650px"}
 
 This will show the same output as if you were running the script in a local PowerShell instance.
 
