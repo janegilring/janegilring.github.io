@@ -185,16 +185,13 @@ In this context we are going to leverage 2 of the available options: Runbooks an
 
 ![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="454px" width="550px"}
 
-4) Go into Credentials:
-
-![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="496px" width="600px"}
-
-5) Click *Add a credential* at the top and create a credential asset for your MyTesla account.  
+4) Go into Credentials.  
+Click *Add a credential* at the top and create a credential asset for your MyTesla account.  
 Remember the name of the asset, as we need to specify the name in the runbook we will create next.
 
 ![alt](/images/2017-02-19_Tesla_PowerShell_07.png){:height="442px" width="300px"}
 
-6) Go back to the frontpage of your Automation account and click on the Runbooks item.  
+5) Go back to the frontpage of your Automation account and click on the Runbooks item.  
 Click Add a runbook->Create a new runbook.  
 Give it a meaningful name and choose *PowerShell* as the *Runbook type*.  
 In the editor that shows up, paste the PowerShell script you want to schedule.  
@@ -205,7 +202,7 @@ To leverage the credential asset we created in step 4, add this line to your scr
 *cred-MyTesla* is the name you specified in step 4.  
 Click *Save* and then *Publish* after the script is pasted and customized.  
 
-7) You should now be on the main page for your new runbook:
+6) You should now be on the main page for your new runbook:
 ![alt](/images/2017-02-19_Tesla_PowerShell_11.png){:height="309px" width="600px"}
 
 Click on Schedules->Add a schedule->Link a schedule to your runbook->Create a new schedule:
@@ -214,7 +211,7 @@ Click on Schedules->Add a schedule->Link a schedule to your runbook->Create a ne
 Customize it to suit your requirements and click OK->Create->OK  
 Close Schedules to go back to the runbook's main page.  
 
-8) Click Start to manually test that the runbook works as intended. Click OK on the prompt as we  
+7) Click Start to manually test that the runbook works as intended. Click OK on the prompt as we  
 do not have any parameters to specify, and we want to run it in a sandbox environment in Azure.
 When the Job window opens you can click on Output to show the output from the runbook:
 ![alt](/images/2017-02-19_Tesla_PowerShell_13.png){:height="330px" width="650px"}
