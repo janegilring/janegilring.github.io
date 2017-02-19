@@ -230,8 +230,7 @@ other options available for scheduling PowerShell scripts.
 ## Summary
 
 In this article we have looked at how we can leverage a Tesla PowerShell module to automate starting  
-and stopping the climate control system. We also looked at different options for scheduleding a PowerShell  
-script on a customized schedule.  
+and stopping the climate control system. We also looked at different options for scheduling a PowerShell script on a customized schedule.  
 Did you find this useful or have more ideas on how to expand this solution? Feel free to leave your 
  suggestions in the comment field below. Maybe you did something completely different?  
  I'd  love to hear about it, even if the solution was not using PowerShell to manage your Tesla.
