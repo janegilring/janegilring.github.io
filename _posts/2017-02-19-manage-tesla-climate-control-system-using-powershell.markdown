@@ -19,7 +19,7 @@ A frequently requested but missing feature is the ability to schedule the state 
 # Solution
 
 Since this article probably will be read by a less technical audience than what I  expect for other 
-articles on this blog I will start by giving some definitions for relevant parts of the proposed solution.
+articles on this blog, I will start by giving some definitions for relevant parts of the proposed solution.
 
 **PowerShell**
  
@@ -51,7 +51,7 @@ which should be more enough for the task we are trying to solve in this context.
 The main benefit of using Azure Automation in this context is that we can schedule a PowerShell  
 script to accomplish a task without being dependent on a computer being powered on at the time the scheduled task is configured to run.
 
-**Controlling your Tesla vehicle from PowerShell**  
+## Controlling your Tesla vehicle from PowerShell
 
 PowerShell can be extended by installing modules which adds commands for a specific  
 task or product. You can think of the [PowerShell Gallery](https://www.powershellgallery.com) as an "app-store" for 
@@ -97,14 +97,14 @@ Now the module is installed and is ready to be used.
 Here is an example on how to explore the available commands and authenticate using your MyTesla  
 credentials:
 
-![alt](/images/2017-02-19_Tesla_PowerShell_01.png)
+![alt](/images/2017-02-19_Tesla_PowerShell_01.png){:height="500px" width="244px"}
   
 Next, we can run the API command get_climate to get the current climate settings:
 
-![alt](/images/2017-02-19_Tesla_PowerShell_02.png)
+![alt](/images/2017-02-19_Tesla_PowerShell_02.png){:height="320px" width="328px"}
   
 Here we can see that we have two API calls for starting and stopping the auto conditioning:
-![alt](/images/2017-02-19_Tesla_PowerShell_03.png)
+![alt](/images/2017-02-19_Tesla_PowerShell_03.png){:height="500px" width="245px"}
 
 Based on what we have seen so far, we have enough information to create a simple script to start and 
 stop auto conditioning:
@@ -124,6 +124,8 @@ PowerShell to manage your Tesla vehicle.
 This will be updated over time with more examples, and hopefully others will contribute  
 as well. If you have any suggestions for new features, feel free to submit an [issue](https://github.com/janegilring/Tesla/issues)  
 on the GitHub repository.
+
+## Scheduling the PowerShell script
 
 **Option 1 - scheduled task in Windows**
 
