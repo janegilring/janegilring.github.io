@@ -195,15 +195,15 @@ Remember the name of the asset, as we need to specify the name in the runbook we
 ![alt](/images/2017-02-19_Tesla_PowerShell_07.png){:height="663px" width="450px"}
 
 6) Go back to the frontpage of your Automation account and click on the Runbooks item.  
-Click Add a runbook->Create a new runbook.
-Give it a meaningful name and choose *PowerShell* as the *Runbook type*.
-In the editor that shows up, paste the PowerShell script you want to schedule.
-If you don't want to start from scratch you may copy and optionally customize the script you want  
+Click Add a runbook->Create a new runbook.  
+Give it a meaningful name and choose *PowerShell* as the *Runbook type*.  
+In the editor that shows up, paste the PowerShell script you want to schedule.  
+If you don't want to start from scratch you may copy and optionally customize the script you want   
 to use from my [Git repository](https://github.com/janegilring/Tesla/tree/master/Scripts)
-To leverage the credential asset we created in step 4, add this line to your script:
-*$MyTeslaCredential = Get-AutomationPSCredential -Name cred-MyTesla*
-*cred-MyTesla* is the name you specified in step 4.
-Click Save and then Publish when the script is pasted and customized.
+To leverage the credential asset we created in step 4, add this line to your script:  
+*$MyTeslaCredential = Get-AutomationPSCredential -Name cred-MyTesla*  
+*cred-MyTesla* is the name you specified in step 4.  
+Click Save and then Publish when the script is pasted and customized.  
 
 7) You should now be on the main page for your new runbook:
 ![alt](/images/2017-02-19_Tesla_PowerShell_11.png){:height="309px" width="600px"}
