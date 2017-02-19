@@ -23,7 +23,7 @@ articles on this blog, I will start by giving some definitions for relevant part
 
 **PowerShell**
  
-![alt](/images/PowerShell_logo.png){:height="226px" width="300px"}
+![alt](/images/PowerShell_logo.png){:height="150px" width="200px"}
 
 >PowerShell (including Windows PowerShell and PowerShell Core) is a task automation and configuration management framework from Microsoft, consisting of a command-line shell and associated scripting language built on the .NET Framework.
 
