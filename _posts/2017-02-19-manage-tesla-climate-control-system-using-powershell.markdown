@@ -10,10 +10,10 @@ categories: HomeAutomation
 
 Tesla's vehicles has a climate control system which can be remotely managed from the company`s mobile app.  
 Many Tesla owners use this to pre-heat or pre-cool the cabin remotely before using the car.  
-A frequently requested but missing feature is the ability to schedule the state of the climate control system.
-
 
 ![alt](/images/Tesla-logo.png){:height="150px" width="186px"}
+
+A frequently requested but missing feature is the ability to schedule the state of the climate control system.
 
 
 # Solution
