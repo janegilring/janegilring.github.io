@@ -158,20 +158,20 @@ This object can be fed into the Connect-Tesla command:
 
 This way, we can authenticate to the MyTesla API unattended.
 
-1. Run through step 1-3 in the section "Controlling your Tesla vehicle from PowerShell" on the computer  
+1) Run through step 1-3 in the section "Controlling your Tesla vehicle from PowerShell" on the computer  
 you want to run the scheduled task from.
-2. Create a .ps1-file with the script you want to schedule and store it locally, for example as *C:\Scripts\Start-TeslaHeating.ps1*.  
+2) Create a .ps1-file with the script you want to schedule and store it locally, for example as *C:\Scripts\Start-TeslaHeating.ps1*.  
 If you don't want to start from scratch you may copy and optionally customize the script you want  
 to use from my [Git repository](https://github.com/janegilring/Tesla/tree/master/Scripts)
-3. Create and export credentials for your MyTesla account as described above
-4. Run the script manually once to make sure it works
-5. [Create a scheduled task](http://www.metalogix.com/help/Content%20Matrix%20Console/SharePoint%20Edition/002_HowTo/004_SharePointActions/012_SchedulingPowerShell.htm) to run the script on the schedule you want, for example weekdays at 7 AM.
+3) Create and export credentials for your MyTesla account as described above
+4) Run the script manually once to make sure it works
+5) [Create a scheduled task](http://www.metalogix.com/help/Content%20Matrix%20Console/SharePoint%20Edition/002_HowTo/004_SharePointActions/012_SchedulingPowerShell.htm) to run the script on the schedule you want, for example weekdays at 7 AM.
 
 
 **Option 2 - runbook in Azure Automation**
 
-1. [Create an Azure account](https://azure.microsoft.com/en-us/free/) if you don't have one (it`s free)
-2. Create an Azure Automation account if you don't have one. To do this, login to portal.azure.com  
+1) [Create an Azure account](https://azure.microsoft.com/en-us/free/) if you don't have one (it`s free)
+2) Create an Azure Automation account if you don't have one. To do this, login to portal.azure.com  
 and find Automation Accounts in the menu on the left (you might need to go to More service at the  
 bottom and search for it). At this point you should be presented with the frontpage for your  
 Automation Account:
@@ -180,18 +180,18 @@ Automation Account:
 
 In this context we are going to leverage 2 of the available options: Runbooks and Assets.
 
-3. Go into Assets:
+3) Go into Assets:
 
 ![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="578px" width="700px"}
 
-4. Go into Credentials:
+4) Go into Credentials:
 
 ![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="496px" width="600px"}
 
-5. Click *Add a credential* at the top and create a credential asset for your MyTesla account.  
+5) Click *Add a credential* at the top and create a credential asset for your MyTesla account.  
 Remember the name of the asset, as we need to specify the name in the runbook we will create next.
 
-6. Go back to the frontpage of your Automation account and click on the Runbooks item.  
+6) Go back to the frontpage of your Automation account and click on the Runbooks item.  
 Click Add a runbook->Create a new runbook.
 Give it a meaningful name and choose *PowerShell* as the *Runbook type*.
 In the editor that shows up, paste the PowerShell script you want to schedule.
@@ -202,7 +202,7 @@ To leverage the credential asset we created in step 4, add this line to your scr
 *cred-MyTesla* is the name you specified in step 4.
 Click Save and then Publish when the script is pasted and customized.
 
-7. You should now be on the main page for your new runbook:
+7) You should now be on the main page for your new runbook:
 ![alt](/images/2017-02-19_Tesla_PowerShell_11.png){:height="309px" width="600px"}
 
 Click on Schedules->Add a schedule->Link a schedule to your runbook->Create a new schedule:
@@ -211,7 +211,7 @@ Click on Schedules->Add a schedule->Link a schedule to your runbook->Create a ne
 Customize it to suit your requirements and click OK->Create->OK  
 Close Schedules to go back to the runbook's main page.  
 
-8. Click Start to manually test that the runbook works as intended. Click OK on the prompt as we  
+8) Click Start to manually test that the runbook works as intended. Click OK on the prompt as we  
 do not have any parameters to specify, and we want to run it in a sandbox environment in Azure.
 When the Job window opens you can click on Output to show the output from the runbook:
 ![alt](/images/2017-02-19_Tesla_PowerShell_11.png){:height="329px" width="650px"}
