@@ -183,7 +183,7 @@ In this context we are going to leverage 2 of the available options: Runbooks an
 
 3) Go into Assets:
 
-![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="578px" width="700px"}
+![alt](/images/2017-02-19_Tesla_PowerShell_06.png){:height="454px" width="550px"}
 
 4) Go into Credentials:
 
