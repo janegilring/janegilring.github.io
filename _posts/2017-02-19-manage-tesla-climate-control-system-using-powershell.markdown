@@ -6,7 +6,7 @@ comments: true
 categories: HomeAutomation
 ---
 
-**Challenge**
+# Challenge
 
 Tesla's vehicles has a climate control system which can be managed from the company`s  
 mobile app. Many Tesla owners use this to pre-heat or pre-cool the cabin remotely  
@@ -18,13 +18,13 @@ of the climate control system.
 ![alt](/images/Tesla-logo.png)
   
 
-**Solution**
+# Solution
 
 Since this article probably will be read by a less technical audience than what I  
 expect for other articles on this blog I will start by giving some definitions  
 for relevant parts of the proposed solution.
 
-*PowerShell*
+**PowerShell**
  
 >PowerShell (including Windows PowerShell and PowerShell Core) is a task automation and configuration management framework from Microsoft, consisting of a command-line shell and associated scripting language built on the .NET Framework.
 
@@ -34,7 +34,7 @@ PowerShell was previously available on Windows only, but last year Microsoft  [m
 The Linux and MacOS versions is still in preview, but the Windows version has been  
 built-in to Windows since Windows 7.
 
-*Scheduled task*  
+**Scheduled task**  
 
 >Task Scheduler is a component of Microsoft Windows that provides the ability to schedule the launch of programs or scripts at pre-defined times or after specified time intervals.
 
@@ -43,7 +43,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Windows_Task_Scheduler)
 This means that a PowerShell script can be scheduled to run at pre-defined intervals,  
 which is what we want to accomplish in this article.
 
-*Azure Automation*  
+**Azure Automation**  
 
 >Microsoft Azure Automation provides a way for users to automate the manual, long-running, error-prone, and frequently repeated tasks that are commonly performed in a cloud and enterprise environment. It saves time and increases the reliability of regular administrative tasks and even schedules them to be automatically performed at regular intervals. You can automate processes using runbooks. A runbook is a set of tasks that perform some automated process in Azure Automation.
 
@@ -56,13 +56,13 @@ The main benefit of using Azure Automation in this context is that we can schedu
 PowerShell script to accomplish a task without being dependent on a computer being  
 powered on at the time the scheduled task is configured to start.
 
-*Controlling your Tesla vehicle from PowerShell*  
+**Controlling your Tesla vehicle from PowerShell**  
 
 PowerShell can be extended by installing modules which adds commands for a specific  
 task or product. You can think of the [PowerShell Gallery](https://www.powershellgallery.com) as an "app-store" for 
  PowerShell, and makes it very convenient to add new modules by simply running a command.
 
-*Start PowerShell (on Windows 7 - 10)*  
+**Start PowerShell (on Windows 7 - 10)**  
 
 Simply press the Start button and search for "PowerShell". You will likely get two hits:
 "Windows PowerShell" and "Windows PowerShell ISE". The first one is a command console while  
@@ -71,7 +71,7 @@ to start with the PowerShell ISE, as it provides helpful features such as Intell
 It also has a script editor, which is useful when building a script which we will do  
 in this article.
 
-*Allow PowerShell scripts to be executed*  
+**Allow PowerShell scripts to be executed**  
 
 PowerShell has a feature called "execution policy" which by default is set to "Restricted",  
 meaning that no scripts is allowed to run. In the context of this article, I will recommend  
@@ -83,7 +83,7 @@ Set-ExecutionPolicy RemoteSigned
 
 Make sure you start PowerShell with "Run As Administrator" before running the command.
 
-*Install the Tesla module for PowerShell*  
+**Install the Tesla module for PowerShell**  
 
 A PowerShell module created by Jon Newman makes it possible to run PowerShell commands  
 which uses the same API as when using the Tesla mobile app and controlling the vehicle  
@@ -133,11 +133,11 @@ This will be updated over time with more examples, and hopefully others will con
 as well. If you have any suggestions for new features, feel free to submit an [issue](https://github.com/janegilring/Tesla/issues)  
 on the GitHub repository.
 
-*Option 1 - scheduled task in Windows*
+**Option 1 - scheduled task in Windows**
 
-*Option 2 - runbook in Azure Automation*
+**Option 2 - runbook in Azure Automation**
 
-*Option 3 - others*  
+**Option 3 - others**  
 
 Scheduled tasks and scheduled Azure Automation runbooks is examples from my side,  
 there are a number of other options available for scheduling PowerShell scripts.  
