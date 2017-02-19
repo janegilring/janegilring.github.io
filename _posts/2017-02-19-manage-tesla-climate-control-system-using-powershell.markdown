@@ -112,8 +112,12 @@ stop auto conditioning:
 {% gist 1af6d498f02abcfa43129d75fee3ff3a %}
 
 Since we are using PowerShell, only the imagination can limit what criterias we can use before  
-executing a command such as starting or stopping heating. For example, we have already seen how we  
-can get information about the current climate state fromt he vehicle including the outside temperature.  
+executing a command such as starting or stopping heating. For example, we could connect to the [Office 365  
+REST API to get calendar events](http://www.lazywinadmin.com/2015/06/powershell-using-office-365-rest-api-to.html)  
+and use that as a criteria in our script (only start heating if we have a calendar event with a subject 
+ containing the word *Tesla* in it during the next 3 hours.)  
+Another example: We have already seen how we can get information about the current climate state from  
+the vehicle including the outside temperature.  
 This means we can use logic in PowerShell's scripting language for starting heating only if the  
 outside temperature is below a given value:
 
