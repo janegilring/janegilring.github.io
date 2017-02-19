@@ -203,7 +203,7 @@ to use from my [Git repository](https://github.com/janegilring/Tesla/tree/master
 To leverage the credential asset we created in step 4, add this line to your script:  
 *$MyTeslaCredential = Get-AutomationPSCredential -Name cred-MyTesla*  
 *cred-MyTesla* is the name you specified in step 4.  
-Click Save and then Publish when the script is pasted and customized.  
+Click *Save* and then *Publish* after the script is pasted and customized.  
 
 7) You should now be on the main page for your new runbook:
 ![alt](/images/2017-02-19_Tesla_PowerShell_11.png){:height="309px" width="600px"}
@@ -217,7 +217,7 @@ Close Schedules to go back to the runbook's main page.
 8) Click Start to manually test that the runbook works as intended. Click OK on the prompt as we  
 do not have any parameters to specify, and we want to run it in a sandbox environment in Azure.
 When the Job window opens you can click on Output to show the output from the runbook:
-![alt](/images/2017-02-19_Tesla_PowerShell_11.png){:height="329px" width="650px"}
+![alt](/images/2017-02-19_Tesla_PowerShell_13.png){:height="330px" width="650px"}
 
 This will show the same output as if you were running the script in a local PowerShell instance.
 
