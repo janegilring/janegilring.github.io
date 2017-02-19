@@ -192,6 +192,8 @@ In this context we are going to leverage 2 of the available options: Runbooks an
 5) Click *Add a credential* at the top and create a credential asset for your MyTesla account.  
 Remember the name of the asset, as we need to specify the name in the runbook we will create next.
 
+![alt](/images/2017-02-19_Tesla_PowerShell_07.png){:height="663px" width="450px"}
+
 6) Go back to the frontpage of your Automation account and click on the Runbooks item.  
 Click Add a runbook->Create a new runbook.
 Give it a meaningful name and choose *PowerShell* as the *Runbook type*.
