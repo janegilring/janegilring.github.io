@@ -23,6 +23,8 @@ articles on this blog, I will start by giving some definitions for relevant part
 
 **PowerShell**
  
+![alt](/images/PowerShell_logo.png){:height="226px" width="300px"}
+
 >PowerShell (including Windows PowerShell and PowerShell Core) is a task automation and configuration management framework from Microsoft, consisting of a command-line shell and associated scripting language built on the .NET Framework.
 
 *Source:* [Wikipedia](https://en.wikipedia.org/wiki/PowerShell)
@@ -40,6 +42,8 @@ This means that a PowerShell script can be scheduled to run at pre-defined inter
  we want to accomplish in this article.
 
 **Azure Automation**  
+
+![alt](/images/Azure_Automation_logo.png){:height="157px" width="300px"}
 
 >Microsoft Azure Automation provides a way for users to automate the manual, long-running, error-prone, and frequently repeated tasks that are commonly performed in a cloud and enterprise environment. It saves time and increases the reliability of regular administrative tasks and even schedules them to be automatically performed at regular intervals. You can automate processes using runbooks. A runbook is a set of tasks that perform some automated process in Azure Automation.
 
