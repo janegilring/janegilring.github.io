@@ -161,6 +161,9 @@ This object can be fed into the Connect-Tesla command:
 *Connect-Tesla -Credential $MyTeslaCredential*
 
 This way, we can authenticate to the MyTesla API unattended.
+
+*Update 2017-02-21: The PSTesla module author notified me that the module does support persistent credentials, more info [here](https://github.com/janegilring/Tesla/issues/1)*
+
 Now that you know how to setup credentials for MyTesla, you can proceed to creating the scheduled task:  
 
 1) Run through step 1-3 in the section "Controlling your Tesla vehicle from PowerShell" on the computer  
