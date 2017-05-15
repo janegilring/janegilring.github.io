@@ -47,13 +47,11 @@ Here is some examples:
 You can find the same examples in the command`s help examples:
 ![alt](/images/2017-05_15_hotfix-status_01.png){:height="436px" width="600px"}
 
-Example output:
-
+Example output:  
 ![alt](/images/2017-05_15_hotfix-status_03.png){:height="218px" width="480px"}
 
 
-Sample Excel-report from my lab enviroment:
-
+Sample Excel-report from my lab enviroment:  
 ![alt](/images/2017-05_15_hotfix-status_02.png){:height="188px" width="350px"}
 
 The function is available in my [PSCommunity module on GitHub](https://github.com/janegilring/PSCommunity/blob/master/Inventory/Get-HotfixStatus.ps1), feel free to log issues or suggest new features in the repository.
