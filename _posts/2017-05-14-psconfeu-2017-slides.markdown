@@ -9,7 +9,7 @@ categories: announcements
 [PowerShell Conference EU 2017](http://www.psconf.eu/) was arranged in Hannover, Germany on Wednesday 3rd to Friday 5th of May 2017.
 
 After the [opening ceremony](https://www.youtube.com/watch?v=l0orBEF6D60), Jeffrey Snover held the [keynote](https://www.youtube.com/watch?v=myQkHM_je70) for the conference:
-![alt](/images/2017-05_15_PSConfEU_2017_03.jpg){:height="800px" width="450px"}
+![alt](/images/2017-05_15_PSConfEU_2017_03.jpg){:height="622px" width="350px"}
 
 Among the things he talked about is transformational changes, which the path going from traditional IT to DevOps is a great example of:
 
