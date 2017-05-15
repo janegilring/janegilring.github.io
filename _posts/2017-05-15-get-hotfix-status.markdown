@@ -52,7 +52,7 @@ Example output:
 ![alt](/images/2017-05_15_hotfix-status_03.png){:height="218px" width="480px"}
 
 
-Sample Excel-report from my lab enviroment:  
+Sample Excel-report from my lab environment:  
 
 ![alt](/images/2017-05_15_hotfix-status_02.png){:height="188px" width="350px"}
 
