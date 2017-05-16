@@ -13,9 +13,9 @@ another challenge these days is to lower the attack surface as much as possible.
 There are many ways to do this, such as restricting what firewall ports is open, having a good  
 systems in place for patch management, and so on.
 One mitigation related to the [WannaCrypt attacks](https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/)  
- which is a relevant topic these days, is to disable the SMB 1 protocol on as many systems as possible.
+, which is a relevant topic these days, is to disable the SMB 1 protocol on as many systems as possible.
 
-Version 1 of the protocol is only needed by operating systems which is no longer supported by Microsoft:
+Version 1.0 of the protocol is only needed by operating systems which is no longer supported by Microsoft:
 -  SMB 1.0 – Windows 2000, Windows XP, Windows Server 2003 and Windows Server 2003 R2
 -  SMB 2.0 – Windows Vista and Windows Server 2008
 -  SMB 2.1 – Windows 7 and Windows Server 2008 R2
@@ -48,3 +48,7 @@ Here is some examples on how (and where) to remove SMB 1 using PowerShell:
 
 {% gist 4a3f0731daa78fdb791be05af2bbfd14 %}
 
+**Summary**
+
+By removing old and insecure protocols, we can significantly lower the attack surface in our organizations. For example, if the above example of removing SMB 1 was performed on as many systems as possible before the Wannacrypt Attacks, the vulnerability would not have been applicable to those systems.
+In this article we have seen examples on how to define that SMB 1 should be absent in the PowerShell DSC configuration management system, how to remove SMB 1 from base images as well as how to uninstall it from existing systems by using PowerShell.
