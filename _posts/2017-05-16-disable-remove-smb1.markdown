@@ -25,7 +25,7 @@ Version 1 of the protocol is only needed by operating systems which is no longer
 
 On all other systems, it is a good idea to consider either disabling or removing the SMB 1.0 protocol.  
 
-Ned Pyle, who is the owner of the SMB protocol in Microsoft, has written a great [article](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/) about why this is a good idea.
+[Ned Pyle](https://twitter.com/nerdpyle), who is the owner of the SMB protocol in Microsoft, has written a great [article](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/) about why this is a good idea.
 
 Quote from the article:  
 *The original SMB1 protocol is nearly 30 years old, and like much of the software made in the 80’s, it was designed for a world that no longer exists*
