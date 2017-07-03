@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Announcing the Data Protection Manager Community Extensions PowerShell module"
-date:   2017-07-03 08:47:20 +0200
+date:   2017-07-03 07:47:20 +0200
 comments: true
 categories: Backup
 ---
