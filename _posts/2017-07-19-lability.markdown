@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Building Hyper-V lab environments using PowerShell DSC"
+title:  "Building Hyper-V lab environments based on PowerShell DSC"
 date:   2017-07-19 21:45:42 +0200
 comments: true
 categories: Hyper-V, PowerShell DSC
@@ -12,7 +12,7 @@ If you are unfamiliar with DSC, have a look at the [DSC overview page](https://m
 
 **Background**
 
-PowerShell DSC was first released back in 2014 integrated in PowerShell 4.0 as part of the Windows Server 2012 R2 release. Since then, it has first and foremost been leveraged in Windows-based server deployments. However, now that PowerShell is [open sourced and available on Linux](https://azure.microsoft.com/en-us/blog/powershell-is-open-sourced-and-is-available-on-linux/), it means that DSC is also available on that platform. It can also be leveraged on Nano Server (Microsoft`s container optimized operating system) and Windows Containers, thus it is clearly an important part of Microsoft`s strategy going forward.
+PowerShell DSC was first released back in 2014 integrated in PowerShell 4.0 as part of the Windows Server 2012 R2 release. Since then, it has first and foremost been leveraged in Windows-based server deployments. However, now that PowerShell is [open sourced and available on Linux](https://azure.microsoft.com/en-us/blog/powershell-is-open-sourced-and-is-available-on-linux/), it means that DSC is also available on that platform. It can also be leveraged on Nano Server (Microsoft's container optimized operating system) and Windows Containers, thus it is clearly an important part of Microsoft`s strategy going forward.
 There is also a number of creative community projects leveraging DSC, one of them which we are going to look at in this article. Imagine if we could leverage the same configuration data structure as DSC for other purposes, such as building a lab environment. At the end, the configuration structure is “just” a PowerShell hash table which can optionally be stored in a PowerShell data file (psd1).
 This is exactly what the community based Lability module does, in addition to leveraging DSC for configuring the virtual machines being created. The module is specifically written for the Hyper-V virtualization platform, but parts of it can be leveraged in other environments as-is.
 The module leverages the concept of [injecting DSC configurations](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/) into the virtual machines hard disk file, typically a VHD or VHDX file. This concept is explained and demonstrated in detail in [this Channel 9 video](https://channel9.msdn.com/Blogs/MVP-Cloud-DataCenter/Automatically-Configure-Your-Machines-Using-Azure-Automation-DSC-at-Initial-Boot-up).
@@ -68,37 +68,37 @@ Get-Help about_Lability
 
 ![alt](/images/Lability_DSC_Lab_07.png){:height="137px" width="600px"}
 
-The above is just a small part of the complete help topic, you can read the complete file [here](https://github.com/VirtualEngine/Lability/blob/dev/en-US/about_Labililty.help.txt). An extract of the help file:
+The above is just a small part of the complete help topic, you can read the complete file [here](https://github.com/VirtualEngine/Lability/blob/dev/en-US/about_Labililty.help.txt). An excerpt from the help file:
 
 *
 The Lability module will parse the DSC configuration document and provision Hyper-V virtual machines according to the metadata contained within. When invoked, Lability will parse a DSC configuration document and automagically provision the following resources:
-            *  Virtual machine disk images
-                - Download required evaluation Operating System installation media.
-                - Expand Windows Image (WIM) image files into Sysprep'd virtual machine parent disks.
-                - Apply required/recommended DSC Windows updates.
-            *  Virtual networks
-                - Create internal and external Hyper-V switches.
-            *  Virtual machines
-                - Connect to the correct virtual switches.
-                - Inject DSC resources from the host machine.
-                - Inject a dynamically created Unattend.xml file.
-                - Inject external ISO, EXE and ZIP resources.
-                - Inject the virtual machine's DSC document.
-                - Invoke the Local Configuration Manager (LCM) after Sysprep.
+              Virtual machine disk images
+                 Download required evaluation Operating System installation media.
+                 Expand Windows Image (WIM) image files into Sysprep'd virtual machine parent disks.
+                 Apply required/recommended DSC Windows updates.
+              Virtual networks
+                 Create internal and external Hyper-V switches.
+              Virtual machines
+                 Connect to the correct virtual switches.
+                 Inject DSC resources from the host machine.
+                 Inject a dynamically created Unattend.xml file.
+                 Inject external ISO, EXE and ZIP resources.
+                 Inject the virtual machine's DSC document.
+                 Invoke the Local Configuration Manager (LCM) after Sysprep.
 
         When Start-LabConfiguration is invoked with the above configuration document, it will:
-            *  Create an internal Hyper-V virtual switch named 'CORPNET'.
-            *  Download required Server 2012 R2 Standard Edition evaluation media.
-            *  Create a Sysprep'd Server 2012 R2 Standard Edition parent VHDX file.
-            *  Install required/recommended DSC hotfixes.
-            *  Provision two Hyper-V virtual machines called 'DC1' and 'APP1'.
-            *  Each VM will be given 2GB RAM (configurable default).
-            *  'DC1' will be assigned 2 virtual CPUs.
-            *  'APP1' will be assigned 1 virtual CPU.
-            *  Attach each virtual machine to the 'CORPNET' virtual switch.
-            *  Create differencing VHDX for each VM.
-            *  Inject a dynamically created Unattend.xml file into the differencing VHDX.
-            *  Inject mof-files (if they exist and –SkipMof is not specified) into the differencing VHDX.
+              Create an internal Hyper-V virtual switch named 'CORPNET'.
+              Download required Server 2012 R2 Standard Edition evaluation media.
+              Create a Sysprep'd Server 2012 R2 Standard Edition parent VHDX file.
+              Install required/recommended DSC hotfixes.
+              Provision two Hyper-V virtual machines called 'DC1' and 'APP1'.
+              Each VM will be given 2GB RAM (configurable default).
+              'DC1' will be assigned 2 virtual CPUs.
+              'APP1' will be assigned 1 virtual CPU.
+              Attach each virtual machine to the 'CORPNET' virtual switch.
+              Create differencing VHDX for each VM.
+              Inject a dynamically created Unattend.xml file into the differencing VHDX.
+              Inject mof-files (if they exist and –SkipMof is not specified) into the differencing VHDX.
         For a full list of supported metadata, see about_ConfigurationData.
 CONTRIBUTE
         Lability is open source on GitHub:
@@ -119,8 +119,8 @@ There is also a number of other helpful about_ files which provides great built-
 By default, Lability downloads evaluation media from Microsoft, but you can also use your own media. More details and instructions on how to register your own sysprepped VHD(X)-files can be found in the about_Media help topic.
 This is all we will cover on the basics in this article, as there already is a couple of other great articles published which goes into more details:
 
-[Building A Lab using Hyper-V and Lability – The End to End Example](https://blog.kilasuit.org/2016/04/13/building-a-lab-using-hyper-v-and-lability-the-end-to-end-example/) by [Ryan Yates](https://twitter.com/ryanyates1990)
-[Lability - The ultimate Hyper-V lab tool (Powershell DSC)](http://www.absolutejam.co.uk/posts/lability-the-ultimate-hyper-v-lab-tool/) by [James Booth](https://twitter.com/@absolutejam)
+- [Building A Lab using Hyper-V and Lability – The End to End Example](https://blog.kilasuit.org/2016/04/13/building-a-lab-using-hyper-v-and-lability-the-end-to-end-example/) by [Ryan Yates](https://twitter.com/ryanyates1990)
+- [Lability - The ultimate Hyper-V lab tool (Powershell DSC)](http://www.absolutejam.co.uk/posts/lability-the-ultimate-hyper-v-lab-tool/) by [James Booth](https://twitter.com/@absolutejam)
 
 As a practical example, I recently had the need to provision a lab environment for testing [Storage Spaces Direct](https://technet.microsoft.com/en-us/windows-server-docs/storage/storage-spaces/storage-spaces-direct-windows-server-2016) in Windows Server 2016. A complete lab environment with 1 domain controller and 3 storage nodes was provisioned in about 15 minutes on my local laptop running Windows 10:
 
@@ -157,6 +157,6 @@ If you have other ideas for enhancements, you can engage with Iain and other con
 
 **Resources**
 
-[Using a NAT Virtual Switch with Hyper-V](https://www.petri.com/using-nat-virtual-switch-hyper-v)
-[Windows 10 Enterprise Evaluation image for Azure](https://vmplace.eu/Image/windows-10-enterprise-evaluation-visual-studio-2017-developer-sdk-uwp-samples-bash-on-ubuntu)
-[Azure: High-performance Premium Storage and managed disks for VMs](https://docs.microsoft.com/en-us/azure/storage/storage-premium-storage)
+- [Using a NAT Virtual Switch with Hyper-V](https://www.petri.com/using-nat-virtual-switch-hyper-v)
+- [Windows 10 Enterprise Evaluation image for Azure](https://vmplace.eu/Image/windows-10-enterprise-evaluation-visual-studio-2017-developer-sdk-uwp-samples-bash-on-ubuntu)
+- [Azure: High-performance Premium Storage and managed disks for VMs](https://docs.microsoft.com/en-us/azure/storage/storage-premium-storage)
