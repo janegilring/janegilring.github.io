@@ -70,8 +70,7 @@ Get-Help about_Lability
 
 The above is just a small part of the complete help topic, you can read the complete file [here](https://github.com/VirtualEngine/Lability/blob/dev/en-US/about_Labililty.help.txt). An excerpt from the help file:
 
-*
-The Lability module will parse the DSC configuration document and provision Hyper-V virtual machines according to the metadata contained within. When invoked, Lability will parse a DSC configuration document and automagically provision the following resources:
+*The Lability module will parse the DSC configuration document and provision Hyper-V virtual machines according to the metadata contained within. When invoked, Lability will parse a DSC configuration document and automagically provision the following resources:
               Virtual machine disk images
                  Download required evaluation Operating System installation media.
                  Expand Windows Image (WIM) image files into Sysprep'd virtual machine parent disks.
@@ -85,7 +84,6 @@ The Lability module will parse the DSC configuration document and provision Hype
                  Inject external ISO, EXE and ZIP resources.
                  Inject the virtual machine's DSC document.
                  Invoke the Local Configuration Manager (LCM) after Sysprep.
-
         When Start-LabConfiguration is invoked with the above configuration document, it will:
               Create an internal Hyper-V virtual switch named 'CORPNET'.
               Download required Server 2012 R2 Standard Edition evaluation media.
@@ -105,9 +103,7 @@ CONTRIBUTE
         [https://github.com/VirtualEngine/Lability](https://github.com/VirtualEngine/Lability)
         As you run Lability and find what you believe to be are bugs, please submit them to:
         [https://github.com/VirtualEngine/Lability/issues](https://github.com/VirtualEngine/Lability/issues)
-        Better yet, fix the bug and submit a pull request.
-
-*
+        Better yet, fix the bug and submit a pull request.*
 
 There is also a number of other helpful about_ files which provides great built-in documentation for the module:
 - about_ConfigurationData
