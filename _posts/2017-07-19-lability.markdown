@@ -142,7 +142,22 @@ Lability actually calls this functionality via CIM/WMI on order to also support 
 
 **Using Lability in Azure virtual machines**
 
+Microsoft [announced](https://azure.microsoft.com/en-us/blog/nested-virtualization-in-azure/) nested virtualization support becoming available on Azure with the Dv3 and Ev3 virtual machines series on July 13, 2017, which was [announced](https://azure.microsoft.com/en-us/blog/introducing-the-new-dv3-and-ev3-vm-sizes/) the same day.
 
+This makes it possible to run Hyper-V on virtual machines in Azure. Most people would think of running Windows Server with Hyper-V in Azure, which makes perfect sense for scenarios such as Windows Containers and setting up Hyper-V lab environments without any physical hardware.
+
+However, it is also possible to run Windows 10 in Azure - it is not supported but it works without any issues I am aware of. In fact, if you have an MSDN subscription, you already have access to a Windows 10 Enterprise evaluation image from the Azure Markedplace.
+
+I have a virtual machine running Windows 10 in Azure, using the Standard D8s v3 (8 cores, 32 GB memory) series.
+I use the Auto-shutdown feature for making sure I do not forget to shutdown the VM, since it can be quite expensive running the VM series that supports nested virtualization for a longer period of time in a personal lab subscription:
+![alt](/images/Lability_DSC_Lab_11.png){:height="430px" width="600px"}
+
+That is the nice thing about using a cloud service for this scenario, you can shut down the environment when it is not in use. If I suddenly need to test something that requires a large amount of memory, I can scale the VM up to a Standard_E64_v3 getting 432 GB RAM for the few hours I need it and then scale it back down to a more price friendly series. The same goes for disk space, I can add both HDD and SSD capacity on demand.
+
+Thus, this makes it a very good alternative or addition to running lab environments on local laptops or other physical hardware.
+
+One tip regarding disk performance if you are going to use Lability on Windows 10 running in Azure: Use Storage Spaces to aggregate disks in order to get better IOPS. For example, the initial data disk I configured for my Azure Windows 10 VM running Lability is an SSD disk providing 7 500 IOPS. That means all virtual machines running on that disk will share that capacity. If I setup 4 disks like this and add them to a Storage Space, I get 4 x the performance (30 000 IOPS).
+Another thing to remember if you do this is to turn off host caching for disks you will use for Storage Spaces. That and other things to keep in mind is available in the related links in the Resources section at the bottom of this article.
 
 **Summary**
 
@@ -155,6 +170,7 @@ If you are not using Hyper-V and still would like to benefit from using Lability
 In a conversation with [Iain Brighton](https://twitter.com/IainBrighton), the author of Lability, he states that *There is lots of potential with Direct Access and integration testing* and *When combined with nested Hyper-V, we have enormous potential*.
 If you have other ideas for enhancements, you can engage with Iain and other contributors in the [Lability repository](https://github.com/VirtualEngine/Lability/issues) on GitHub. Note that there is a separate dev branch, where unreleased functionality can be inspected and tested.
 
+At the end of the article, we looked at how Microsoft Azure can be used to host virtual machines running Windows 10 in order to leverage Lability in a scalable cloud platform.
 
 **Resources**
 
