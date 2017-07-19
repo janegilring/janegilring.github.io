@@ -1,0 +1,162 @@
+---
+layout: post
+title:  "Building Hyper-V lab environments using PowerShell DSC"
+date:   2017-07-19 21:45:42 +0200
+comments: true
+categories: Hyper-V, PowerShell DSC
+---
+
+In this article we will look at how the PowerShell Desired State Configuration (DSC) feature in Windows PowerShell can be leveraged for building lab environments.
+If you are unfamiliar with DSC, have a look at the [DSC overview page](https://msdn.microsoft.com/en-us/powershell/dsc/overview) on MSDN. As stated there:
+*DSC provides a set of Windows PowerShell language extensions, new Windows PowerShell cmdlets, and resources that you can use to declaratively specify how you want your software environment to be configured.*
+
+**Background**
+
+PowerShell DSC was first released back in 2014 integrated in PowerShell 4.0 as part of the Windows Server 2012 R2 release. Since then, it has first and foremost been leveraged in Windows-based server deployments. However, now that PowerShell is [open sourced and available on Linux](https://azure.microsoft.com/en-us/blog/powershell-is-open-sourced-and-is-available-on-linux/), it means that DSC is also available on that platform. It can also be leveraged on Nano Server (Microsoft`s container optimized operating system) and Windows Containers, thus it is clearly an important part of Microsoft`s strategy going forward.
+There is also a number of creative community projects leveraging DSC, one of them which we are going to look at in this article. Imagine if we could leverage the same configuration data structure as DSC for other purposes, such as building a lab environment. At the end, the configuration structure is “just” a PowerShell hash table which can optionally be stored in a PowerShell data file (psd1).
+This is exactly what the community based Lability module does, in addition to leveraging DSC for configuring the virtual machines being created. The module is specifically written for the Hyper-V virtualization platform, but parts of it can be leveraged in other environments as-is.
+The module leverages the concept of [injecting DSC configurations](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/) into the virtual machines hard disk file, typically a VHD or VHDX file. This concept is explained and demonstrated in detail in [this Channel 9 video](https://channel9.msdn.com/Blogs/MVP-Cloud-DataCenter/Automatically-Configure-Your-Machines-Using-Azure-Automation-DSC-at-Initial-Boot-up).
+
+
+**Getting started with Labilily**
+
+The Lability module is available from the PowerShell Gallery, meaning you can use PowerShellGet to install it:
+Install-Module -Name Lability
+As we can see, there is a number of useful functions available:
+
+![alt](/images/Lability_DSC_Lab.png){:height="692px" width="350px"}
+
+Get-LabHostDefault returns the default settings for the Lability environment:
+
+![alt](/images/Lability_DSC_Lab_02.png){:height="130px" width="600px"}
+
+Using Set-LabHostDefault we can customize the settings, for example pointing paths to an external hard drive or another custom location.
+Similarly, we have default settings for virtual machines which can be retrieved/customized using Get-VMLabDefault/Set-VMLabDefault:
+
+![alt](/images/Lability_DSC_Lab_03.png){:height="184px" width="500px"}
+
+Whether you choose to customize those settings or not, the next step is to run Start-LabHostConfiguration which will create the directories specified in the configuration if they do not exist, as well as verify if the Hyper-V role is installed (and install it if not):
+
+![alt](/images/Lability_DSC_Lab_04.png){:height="314px" width="600px"}
+
+In its simplest form, that is all that is necessary to configure before you can start creating your first lab environment based on Lability.
+First, create DSC configuration files (.mof and .meta.mof) for the nodes in your new lab environment. This is accomplished in exactly the same way as you do when configuring the DSC agent (Local Configuration Manager) and creating DSC configurations, and is not something that is created by Lability, it just consumes the DSC configuration files.
+If we are going to create a simple lab with a domain controller (DC1) and an application server (APP1), we would need to make sure the DSC configuration files exists in Lability`s default configuration directory specified in (Get-LabHostDefault).ConfigurationPath:
+
+![alt](/images/Lability_DSC_Lab_05.png){:height="147px" width="600px"}
+
+Here is a complete end-to-end example for getting started with Lability which should work on any Windows 10 computer capable of running Hyper-V:
+
+{% gist 87de2c1312a9a8551a9f11bbc905428a %}
+
+At this point, the lab host is configured and we are ready to create out first lab environment (you can create as many as you want).
+The next step is to create configuration data specifying the details Lability needs to know about our first lab environment, such as virtual machines and virtual networks. Here is an example for setting up a basic lab environment:
+
+{% gist db4712d67e2b4eed154205c91e8aa936 %}
+
+This example assumes that the before mentioned DSC configuration files (MOF-files for APP1 and DC1) exists in (Get-LabHostDefault).ConfigurationPath.
+
+If you wanted to use a custom directory for the DSC configuration files, you would need to add the –Path parameter to Start-LabConfiguration.
+When the above example is executed, Lability will start to download the necessary media files (Windows Server 2016 Evaluation ISO in this example), create virtual machines, virtual switches and so on as specified in the configuration data:
+
+![alt](/images/Lability_DSC_Lab_06.png){:height="202px" width="600px"}
+
+Side note: If you for some reason do not want to configure the virtual machines using DSC, you can specify Start-LabConfiguration -SkipMofCheck.
+As you can see in the example above, there is a lot of Lability-specific settings (note that the Lability_ prefix is optional). In order to know what settings Lability uses, the best way is to look into the help system.
+Lability has a number of very comprehensive about_ files, the main one being:
+Get-Help about_Lability
+
+![alt](/images/Lability_DSC_Lab_07.png){:height="137px" width="600px"}
+
+The above is just a small part of the complete help topic, you can read the complete file [here](https://github.com/VirtualEngine/Lability/blob/dev/en-US/about_Labililty.help.txt). An extract of the help file:
+
+*
+The Lability module will parse the DSC configuration document and provision Hyper-V virtual machines according to the metadata contained within. When invoked, Lability will parse a DSC configuration document and automagically provision the following resources:
+            *  Virtual machine disk images
+                - Download required evaluation Operating System installation media.
+                - Expand Windows Image (WIM) image files into Sysprep'd virtual machine parent disks.
+                - Apply required/recommended DSC Windows updates.
+            *  Virtual networks
+                - Create internal and external Hyper-V switches.
+            *  Virtual machines
+                - Connect to the correct virtual switches.
+                - Inject DSC resources from the host machine.
+                - Inject a dynamically created Unattend.xml file.
+                - Inject external ISO, EXE and ZIP resources.
+                - Inject the virtual machine's DSC document.
+                - Invoke the Local Configuration Manager (LCM) after Sysprep.
+
+        When Start-LabConfiguration is invoked with the above configuration document, it will:
+            *  Create an internal Hyper-V virtual switch named 'CORPNET'.
+            *  Download required Server 2012 R2 Standard Edition evaluation media.
+            *  Create a Sysprep'd Server 2012 R2 Standard Edition parent VHDX file.
+            *  Install required/recommended DSC hotfixes.
+            *  Provision two Hyper-V virtual machines called 'DC1' and 'APP1'.
+            *  Each VM will be given 2GB RAM (configurable default).
+            *  'DC1' will be assigned 2 virtual CPUs.
+            *  'APP1' will be assigned 1 virtual CPU.
+            *  Attach each virtual machine to the 'CORPNET' virtual switch.
+            *  Create differencing VHDX for each VM.
+            *  Inject a dynamically created Unattend.xml file into the differencing VHDX.
+            *  Inject mof-files (if they exist and –SkipMof is not specified) into the differencing VHDX.
+        For a full list of supported metadata, see about_ConfigurationData.
+CONTRIBUTE
+        Lability is open source on GitHub:
+        [https://github.com/VirtualEngine/Lability](https://github.com/VirtualEngine/Lability)
+        As you run Lability and find what you believe to be are bugs, please submit them to:
+        [https://github.com/VirtualEngine/Lability/issues](https://github.com/VirtualEngine/Lability/issues)
+        Better yet, fix the bug and submit a pull request.
+
+*
+
+There is also a number of other helpful about_ files which provides great built-in documentation for the module:
+- about_ConfigurationData
+- about_CustomResources
+- about_Bootstrap
+- about_Media
+- about_Networking
+
+By default, Lability downloads evaluation media from Microsoft, but you can also use your own media. More details and instructions on how to register your own sysprepped VHD(X)-files can be found in the about_Media help topic.
+This is all we will cover on the basics in this article, as there already is a couple of other great articles published which goes into more details:
+
+[Building A Lab using Hyper-V and Lability – The End to End Example](https://blog.kilasuit.org/2016/04/13/building-a-lab-using-hyper-v-and-lability-the-end-to-end-example/) by [Ryan Yates](https://twitter.com/ryanyates1990)
+[Lability - The ultimate Hyper-V lab tool (Powershell DSC)](http://www.absolutejam.co.uk/posts/lability-the-ultimate-hyper-v-lab-tool/) by [James Booth](https://twitter.com/@absolutejam)
+
+As a practical example, I recently had the need to provision a lab environment for testing [Storage Spaces Direct](https://technet.microsoft.com/en-us/windows-server-docs/storage/storage-spaces/storage-spaces-direct-windows-server-2016) in Windows Server 2016. A complete lab environment with 1 domain controller and 3 storage nodes was provisioned in about 15 minutes on my local laptop running Windows 10:
+
+![alt](/images/Lability_DSC_Lab_08.png){:height="160px" width="600px"}
+
+An Active Directory domain was installed, and all features necessary for this particular lab was installed on the storage nodes, saving a lot of time compared to a manual effort.
+The whole configuration for setting up the Storage Spaces Direct lab end to end using Lability is available [here](https://github.com/janegilring/PSCommunity/tree/master/Lability) on my GitHub account.
+
+**Inner workings**
+
+Under the hood, Lability actually uses the [xHyper-V DSC module](https://github.com/PowerShell/xHyper-V) to provision virtual machines and create virtual networks:
+
+![alt](/images/Lability_DSC_Lab_09.png){:height="182px" width="600px"}
+
+This way, it also gets a lot of functionality “for free”. For example, currently the xHyper-V module does not support adding data disks to virtual machines. When this functionality is added at some point in the future, it means that Lability will also get that new feature. Without doing any changes to the Lability module. One of the main goals behind the module is not to reinvent the wheel, and rather contribute to create general DSC resources which can be leveraged by Lability as well as benefit everyone else.
+You might be concerned that Lability will overwrite any DSC configuration you already have on your lab host computer. At least I was, since I have a large configuration which is configuring my IT Pro computer with things such as [Visual Studio Code extensions](http://www.powershellmagazine.com/2016/06/08/build-your-visual-studio-code-development-environment-using-powershell-dsc/), software via Chocolatey and so on.
+In early versions, Lability used to apply a permanent DSC configuration to the local computer. However, that is not an issue anymore as the author realized this was a bad idea. Now, Lability do not apply any permanent DSC configuration to the lab host computer, it rather [calls DSC resources directly](https://blogs.msdn.microsoft.com/powershell/2015/02/27/invoking-powershell-dsc-resources-directly/). Invoke-DscResource was introduced in Windows Management Framework 5 for this exact purpose, allowing third party management products such as Ansible, Chef and Puppet leverage DSC resources without interacting with the Local Configuration Manager or call any other native DSC cmdlets.
+
+Lability actually calls this functionality via CIM/WMI on order to also support Windows Management Framework 4, that is why there is an internal InvokeDscResource function in the Lability module:
+
+![alt](/images/Lability_DSC_Lab_10.png){:height="184px" width="600px"}
+
+**Summary**
+
+Personally I work a lot with Azure Automation DSC, and I`m seeing an opportunity to bootstrap virtual machines only with the DSC meta configuration (.meta.mof) generated by Azure Automation. That way, the configurations and all others settings (credentials, global variables, etc) can be dynamically retrieved from Azure Automation.
+I find Lability to be a very useful resource to have in your tool belt, as there is so many scenarios it enables. Some that comes to mind is building standardized lab environments for classrooms, as well as spinning up an isolated lab for testing a specific part of a production environment. [Virtual Engine](http://virtualengine.co.uk/) (a hosted online lab provider) is actually using Lability (in conjunction with [Ravello](https://www.ravellosystems.com/)) for creating all of their demo and lab environments.
+[Microsoft Test Lab Guides](http://social.technet.microsoft.com/wiki/contents/articles/1262.test-lab-guides.aspx) (TLGs) is another scenario which easily could be implemented in Lability by adding the specifications from a TLG into a DSC configuration. Actually, there is a [discussion thread](https://github.com/VirtualEngine/Lability/issues/94) in the module repository regarding lab configuration sharing, where one of the suggestions is to add a PowerShellGet provider for this purpose. If this becomes a reality and the community starts to share lab configurations for TLGs and other scenarios, it will become even easier to create lab environments for various scenarios.
+If you are not using Hyper-V and still would like to benefit from using Lability configuration data, there is a separate [LabilityBootstrap](https://github.com/VirtualEngine/LabilityBootstrap) module available:
+*The LabilityBootstrap module enables manual deployment of (virtual) machines using Lability configuration data. This makes it possible to use the same lab/testing configuration documents outside of the standard Lability local Hyper-V host deployment model; for example using VMware Workstation or Oracle VirtualBox.*
+
+In a conversation with [Iain Brighton](https://twitter.com/IainBrighton), the author of Lability, he states that *There is lots of potential with Direct Access and integration testing* and *When combined with nested Hyper-V, we have enormous potential*.
+If you have other ideas for enhancements, you can engage with Iain and other contributors in the [Lability repository](https://github.com/VirtualEngine/Lability/issues) on GitHub. Note that there is a separate dev branch, where unreleased functionality can be inspected and tested.
+
+
+**Resources**
+
+[Using a NAT Virtual Switch with Hyper-V](https://www.petri.com/using-nat-virtual-switch-hyper-v)
+[Windows 10 Enterprise Evaluation image for Azure](https://vmplace.eu/Image/windows-10-enterprise-evaluation-visual-studio-2017-developer-sdk-uwp-samples-bash-on-ubuntu)
+[Azure: High-performance Premium Storage and managed disks for VMs](https://docs.microsoft.com/en-us/azure/storage/storage-premium-storage)
