@@ -85,7 +85,7 @@ When invoked, Lability will parse a DSC configuration document and automagically
                  - Inject external ISO, EXE and ZIP resources.  
                  - Inject the virtual machine's DSC document.  
                  - Invoke the Local Configuration Manager (LCM) after Sysprep.  
-       -  *When Start-LabConfiguration is invoked with the above configuration document, it will:*  
+       -  When Start-LabConfiguration is invoked with the above configuration document, it will:  
               - Create an internal Hyper-V virtual switch named 'CORPNET'.  
               - Download required Server 2012 R2 Standard Edition evaluation media.  
               - Create a Sysprep'd Server 2012 R2 Standard Edition parent VHDX file.  
@@ -172,7 +172,7 @@ If you have other ideas for enhancements, you can engage with Iain and other con
 
 At the end of the article, we looked at how Microsoft Azure can be used to host virtual machines running Windows 10 in order to leverage Lability in a scalable cloud platform.
 
-## Resources
+# Resources
 
 - [Sizes for Windows virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes)
 - [Azure: High-performance Premium Storage and managed disks for VMs](https://docs.microsoft.com/en-us/azure/storage/storage-premium-storage)
