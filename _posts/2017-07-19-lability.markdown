@@ -10,7 +10,7 @@ In this article we will look at how the PowerShell Desired State Configuration (
 If you are unfamiliar with DSC, have a look at the [DSC overview page](https://msdn.microsoft.com/en-us/powershell/dsc/overview) on MSDN. As stated there:
 *DSC provides a set of Windows PowerShell language extensions, new Windows PowerShell cmdlets, and resources that you can use to declaratively specify how you want your software environment to be configured.*
 
-**Background**
+#Background
 
 PowerShell DSC was first released back in 2014 integrated in PowerShell 4.0 as part of the Windows Server 2012 R2 release. Since then, it has first and foremost been leveraged in Windows-based server deployments. However, now that PowerShell is [open sourced and available on Linux](https://azure.microsoft.com/en-us/blog/powershell-is-open-sourced-and-is-available-on-linux/), it means that DSC is also available on that platform. It can also be leveraged on Nano Server (Microsoft's container optimized operating system) and Windows Containers, thus it is clearly an important part of Microsoft`s strategy going forward.
 There is also a number of creative community projects leveraging DSC, one of them which we are going to look at in this article. Imagine if we could leverage the same configuration data structure as DSC for other purposes, such as building a lab environment. At the end, the configuration structure is “just” a PowerShell hash table which can optionally be stored in a PowerShell data file (psd1).
@@ -18,7 +18,7 @@ This is exactly what the community based Lability module does, in addition to le
 The module leverages the concept of [injecting DSC configurations](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/) into the virtual machines hard disk file, typically a VHD or VHDX file. This concept is explained and demonstrated in detail in [this Channel 9 video](https://channel9.msdn.com/Blogs/MVP-Cloud-DataCenter/Automatically-Configure-Your-Machines-Using-Azure-Automation-DSC-at-Initial-Boot-up).
 
 
-**Getting started with Labilily**
+#Getting started with Lability
 
 The Lability module is available from the PowerShell Gallery, meaning you can use PowerShellGet to install it:
 Install-Module -Name Lability
@@ -72,19 +72,20 @@ The above is just a small part of the complete help topic, you can read the comp
 
 *The Lability module will parse the DSC configuration document and provision Hyper-V virtual machines according to the metadata contained within.  
 When invoked, Lability will parse a DSC configuration document and automagically provision the following resources:  
-              - Virtual machine disk images  
+              - **Virtual machine disk images**  
                  - Download required evaluation Operating System installation media.  
                  - Expand Windows Image (WIM) image files into Sysprep'd virtual machine parent disks.  
                  - Apply required/recommended DSC Windows updates.  
-              - Virtual networks  
+              - **Virtual networks**  
                  - Create internal and external Hyper-V switches.  
-              - Virtual machines  
+              - **Virtual machines**  
                  - Connect to the correct virtual switches.  
                  - Inject DSC resources from the host machine.  
                  - Inject a dynamically created Unattend.xml file.  
                  - Inject external ISO, EXE and ZIP resources.  
                  - Inject the virtual machine's DSC document.  
                  - Invoke the Local Configuration Manager (LCM) after Sysprep.  
+
        -  When Start-LabConfiguration is invoked with the above configuration document, it will:  
               - Create an internal Hyper-V virtual switch named 'CORPNET'.  
               - Download required Server 2012 R2 Standard Edition evaluation media.  
@@ -97,7 +98,8 @@ When invoked, Lability will parse a DSC configuration document and automagically
               - Attach each virtual machine to the 'CORPNET' virtual switch.  
               - Create differencing VHDX for each VM.  
               - Inject a dynamically created Unattend.xml file into the differencing VHDX.  
-              - Inject mof-files (if they exist and –SkipMof is not specified) into the differencing VHDX.   
+              - Inject mof-files (if they exist and –SkipMof is not specified) into the differencing VHDX.
+              
         For a full list of supported metadata, see about_ConfigurationData.  
 CONTRIBUTE  
         Lability is open source on GitHub:  
@@ -126,7 +128,7 @@ As a practical example, I recently had the need to provision a lab environment f
 An Active Directory domain was installed, and all features necessary for this particular lab was installed on the storage nodes, saving a lot of time compared to a manual effort.
 The whole configuration for setting up the Storage Spaces Direct lab end to end using Lability is available [here](https://github.com/janegilring/PSCommunity/tree/master/Lability) on my GitHub account.
 
-**Inner workings**
+#Inner workings
 
 Under the hood, Lability actually uses the [xHyper-V DSC module](https://github.com/PowerShell/xHyper-V) to provision virtual machines and create virtual networks:
 
@@ -140,7 +142,7 @@ Lability actually calls this functionality via CIM/WMI on order to also support 
 
 ![alt](/images/Lability_DSC_Lab_12.png){:height="505px" width="800px"}
 
-**Using Lability in Azure virtual machines**
+#Using Lability in Azure virtual machines
 
 Microsoft [announced](https://azure.microsoft.com/en-us/blog/nested-virtualization-in-azure/) nested virtualization support becoming available on Azure with the Dv3 and Ev3 virtual machines series on July 13, 2017, which was [announced](https://azure.microsoft.com/en-us/blog/introducing-the-new-dv3-and-ev3-vm-sizes/) the same day.
 
@@ -159,7 +161,7 @@ Thus, this makes it a very good alternative or addition to running lab environme
 One tip regarding disk performance if you are going to use Lability on Windows 10 running in Azure: Use Storage Spaces to aggregate disks in order to get better IOPS. For example, the initial data disk I configured for my Azure Windows 10 VM running Lability is an SSD disk providing 7 500 IOPS. That means all virtual machines running on that disk will share that capacity. If I setup 4 disks like this and add them to a Storage Space, I get 4 x the performance (30 000 IOPS).
 Another thing to remember if you do this is to turn off host caching for disks you will use for Storage Spaces. That and other things to keep in mind is available in the related links in the Resources section at the bottom of this article.
 
-**Summary**
+#Summary
 
 Personally I work a lot with Azure Automation DSC, and I`m seeing an opportunity to bootstrap virtual machines only with the DSC meta configuration (.meta.mof) generated by Azure Automation. That way, the configurations and all others settings (credentials, global variables, etc) can be dynamically retrieved from Azure Automation.
 I find Lability to be a very useful resource to have in your tool belt, as there is so many scenarios it enables. Some that comes to mind is building standardized lab environments for classrooms, as well as spinning up an isolated lab for testing a specific part of a production environment. [Virtual Engine](http://virtualengine.co.uk/) (a hosted online lab provider) is actually using Lability (in conjunction with [Ravello](https://www.ravellosystems.com/)) for creating all of their demo and lab environments.
@@ -172,7 +174,7 @@ If you have other ideas for enhancements, you can engage with Iain and other con
 
 At the end of the article, we looked at how Microsoft Azure can be used to host virtual machines running Windows 10 in order to leverage Lability in a scalable cloud platform.
 
-**Resources**
+##Resources
 
 - [Sizes for Windows virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes)
 - [Azure: High-performance Premium Storage and managed disks for VMs](https://docs.microsoft.com/en-us/azure/storage/storage-premium-storage)
