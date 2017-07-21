@@ -71,33 +71,33 @@ Get-Help about_Lability
 The above is just a small part of the complete help topic, you can read the complete file [here](https://github.com/VirtualEngine/Lability/blob/dev/en-US/about_Labililty.help.txt). An excerpt from the help file:
 
 *The Lability module will parse the DSC configuration document and provision Hyper-V virtual machines according to the metadata contained within.  
-When invoked, Lability will parse a DSC configuration document and automagically provision the following resources:
-              - Virtual machine disk images
-                 - Download required evaluation Operating System installation media.
-                 - Expand Windows Image (WIM) image files into Sysprep'd virtual machine parent disks.
-                 - Apply required/recommended DSC Windows updates.
-              - Virtual networks
-                 - Create internal and external Hyper-V switches.
-              - Virtual machines
-                 - Connect to the correct virtual switches.
-                 - Inject DSC resources from the host machine.
-                 - Inject a dynamically created Unattend.xml file.
-                 - Inject external ISO, EXE and ZIP resources.
-                 - Inject the virtual machine's DSC document.
-                 - Invoke the Local Configuration Manager (LCM) after Sysprep.
-       -  When Start-LabConfiguration is invoked with the above configuration document, it will:
-              - Create an internal Hyper-V virtual switch named 'CORPNET'.
-              - Download required Server 2012 R2 Standard Edition evaluation media.
-              - Create a Sysprep'd Server 2012 R2 Standard Edition parent VHDX file.
-              - Install required/recommended DSC hotfixes.
-              - Provision two Hyper-V virtual machines called 'DC1' and 'APP1'.
-              - Each VM will be given 2GB RAM (configurable default).
-              - 'DC1' will be assigned 2 virtual CPUs.
-              - 'APP1' will be assigned 1 virtual CPU.
-              - Attach each virtual machine to the 'CORPNET' virtual switch.
-              - Create differencing VHDX for each VM.
-              - Inject a dynamically created Unattend.xml file into the differencing VHDX.
-              - Inject mof-files (if they exist and –SkipMof is not specified) into the differencing VHDX.  
+When invoked, Lability will parse a DSC configuration document and automagically provision the following resources:  
+              - Virtual machine disk images  
+                 - Download required evaluation Operating System installation media.  
+                 - Expand Windows Image (WIM) image files into Sysprep'd virtual machine parent disks.  
+                 - Apply required/recommended DSC Windows updates.  
+              - Virtual networks  
+                 - Create internal and external Hyper-V switches.  
+              - Virtual machines  
+                 - Connect to the correct virtual switches.  
+                 - Inject DSC resources from the host machine.  
+                 - Inject a dynamically created Unattend.xml file.  
+                 - Inject external ISO, EXE and ZIP resources.  
+                 - Inject the virtual machine's DSC document.  
+                 - Invoke the Local Configuration Manager (LCM) after Sysprep.  
+       -  When Start-LabConfiguration is invoked with the above configuration document, it will:  
+              - Create an internal Hyper-V virtual switch named 'CORPNET'.  
+              - Download required Server 2012 R2 Standard Edition evaluation media.  
+              - Create a Sysprep'd Server 2012 R2 Standard Edition parent VHDX file.  
+              - Install required/recommended DSC hotfixes.  
+              - Provision two Hyper-V virtual machines called 'DC1' and 'APP1'.  
+              - Each VM will be given 2GB RAM (configurable default).  
+              - 'DC1' will be assigned 2 virtual CPUs.  
+              - 'APP1' will be assigned 1 virtual CPU.  
+              - Attach each virtual machine to the 'CORPNET' virtual switch.  
+              - Create differencing VHDX for each VM.  
+              - Inject a dynamically created Unattend.xml file into the differencing VHDX.  
+              - Inject mof-files (if they exist and –SkipMof is not specified) into the differencing VHDX.   
         For a full list of supported metadata, see about_ConfigurationData.  
 CONTRIBUTE  
         Lability is open source on GitHub:  
