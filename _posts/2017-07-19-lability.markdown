@@ -85,8 +85,7 @@ When invoked, Lability will parse a DSC configuration document and automagically
                  - Inject external ISO, EXE and ZIP resources.  
                  - Inject the virtual machine's DSC document.  
                  - Invoke the Local Configuration Manager (LCM) after Sysprep.  
-
-       -  When Start-LabConfiguration is invoked with the above configuration document, it will:  
+       -  *When Start-LabConfiguration is invoked with the above configuration document, it will:*  
               - Create an internal Hyper-V virtual switch named 'CORPNET'.  
               - Download required Server 2012 R2 Standard Edition evaluation media.  
               - Create a Sysprep'd Server 2012 R2 Standard Edition parent VHDX file.  
@@ -99,7 +98,6 @@ When invoked, Lability will parse a DSC configuration document and automagically
               - Create differencing VHDX for each VM.  
               - Inject a dynamically created Unattend.xml file into the differencing VHDX.  
               - Inject mof-files (if they exist and –SkipMof is not specified) into the differencing VHDX.
-
         For a full list of supported metadata, see about_ConfigurationData.  
 CONTRIBUTE  
         Lability is open source on GitHub:  
