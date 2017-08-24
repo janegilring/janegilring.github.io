@@ -10,6 +10,16 @@ In this article, we are going to introduce a new PowerShell module called PSProd
 
 ![alt](/images/2017-08-24_Productivity_01.jpg){:height="387px" width="600px"}
 
+**Time management**
+
+![alt](/images/2017-08-24_Productivity_02.png)
+
+Time management is something most people is having to face every day. At work, we try to be as productive as possible. However, it may not be easy due to many distractions during a work day.  
+Many books are written on this topic, and several techniques exists for trying to put your available time into a system. The [Pomodoro technique](https://cirillocompany.de/pages/pomodoro-technique) is one of the more popular time management techniques. It is a great way to eliminate distractions, such as phone notifications, e-mail, questions from collegues and so on. In a nutshell, the technique uses a timer to put bulks of work into several sprints - typically lasting for 25 minutes.
+
+A while back, [MVP Ståle Hansen](http://twitter.com/StaleHansen) wrote a PowerShell script for starting a Pomodoro sprint using PowerShell as the timer. In addition to starting a timer, he also invoked additional actions such as enabling presentation mode to avoid notifications to pop-up on the computer.  
+A few years ago I wrote a PowerShell function for publishing Skype for Business (formerly Lync) availability using a PowerShell function. Ståle incorporated this into his script as well. After talking together about how useful the Start-Pomodoro function is, we decided to create a PowerShell module hosted on GitHub and published to the PowerShell Gallery in order to make it easier for the community to install, use and contribute.
+
 
 **Introducing the PowerShell Productivity Tools module**
 
@@ -22,17 +32,6 @@ If you do not have the option to leverage the PowerShellGet module, manual insta
 The initial version of the module contains the following functions:
 - **Start-Pomodoro** - Initiates a new Pomodoro sprint and supports several actions such as configuring availability in Skype for Business, enable presentation mode, start music and trigger custom tasks using IFTT such as muting/unmuting a mobile device.
 - **Publish-SfBContactInformation** - Publish-SfBContactInformation is a PowerShell function to configure a set of availability settings in the Skype for Business client.
-
-
-**Time management**
-
-![alt](/images/2017-08-24_Productivity_02.png)
-
-Time management is something most people is having to face every day. At work, we try to be as productive as possible. However, it may not be easy due to many distractions during a work day.  
-Many books are written on this topic, and several techniques exists for trying to put your available time into a system. The [Pomodoro technique](https://cirillocompany.de/pages/pomodoro-technique) is one of the more popular time management techniques. It is a great way to eliminate distractions, such as phone notifications, e-mail, questions from collegues and so on. In a nutshell, the technique uses a timer to put bulks of work into several sprints - typically lasting for 25 minutes.
-
-A while back, [MVP Ståle Hansen](http://twitter.com/StaleHansen) wrote a PowerShell script for starting a Pomodoro sprint using PowerShell as the timer. In addition to starting a timer, he also invoked additional actions such as enabling presentation mode to avoid notifications to pop-up on the computer.  
-A few years ago I wrote a PowerShell function for publishing Skype for Business (formerly Lync) availability using a PowerShell function. Ståle incorporated this into his script as well. After talking together about how useful the Start-Pomodoro function is, we decided to create a PowerShell module hosted on GitHub and published to the PowerShell Gallery in order to make it easier for the community to install, use and contribute.
 
 Here is some examples on how to leverage the Start-Pomodoro function:
 {% gist 04c07f3c0ddaf95a475be2b77338fce5 %}
