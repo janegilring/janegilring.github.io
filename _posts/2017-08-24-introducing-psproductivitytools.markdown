@@ -10,7 +10,7 @@ In this article, we are going to introduce a new PowerShell module called PSProd
 
 ![alt](/images/2017-08-24_Productivity_01.jpg){:height="387px" width="600px"}
 
-**Time management**
+# Time management
 
 ![alt](/images/2017-08-24_Productivity_02.png)
 
@@ -21,7 +21,7 @@ A while back, [MVP Ståle Hansen](http://twitter.com/StaleHansen) wrote a PowerS
 A few years ago I wrote a PowerShell function for publishing Skype for Business (formerly Lync) availability using a PowerShell function. Ståle incorporated this into his script as well. After talking together about how useful the Start-Pomodoro function is, we decided to create a PowerShell module hosted on GitHub and published to the PowerShell Gallery in order to make it easier for the community to install, use and contribute.
 
 
-**Introducing the PowerShell Productivity Tools module**
+# Introducing the PowerShell Productivity Tools module
 
 The module is published to the PowerShell Gallery, which means you can install it using the following command from the PowerShellGet module:
 
@@ -40,7 +40,7 @@ For additional information, I would recommend to read Ståle`s article [Set your
 
 Any other suggestions are also welcome, feel free to submit an [issue](https://github.com/janegilring/PSProductivityTools/issues) on the GitHub repository.
 
-**Productivity devices**
+# Productivity devices
 
 In addition to the Start-Pomodoro PowerShell function, a few physical tools can be of great help as well.
 
@@ -54,7 +54,7 @@ Another device I recently bought and is quite happy with after a couple weeks of
 ![alt](/images/2017-08-24_Productivity_03.png)
 
 
-**Summary**
+# Summary
 
 In this article we have looked at the PowerShell Productivity Tools module - which contains commands for productivity tools & topics such as time management. Going forward we would like to both expand the functionality of the existing commands as well as add new productivity related ones. If you have an idea, we would love to hear it even if you do not plan to implement it yourself.  
 Hopefully, the PowerShell Productivity Tools module can help you be more productive during busy work days.
