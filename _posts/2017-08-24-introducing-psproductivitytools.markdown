@@ -47,11 +47,11 @@ In addition to the Start-Pomodoro PowerShell function, a few physical tools can 
 My first recommendation is to get a good headset with noice cancellation capabilities.
 I recently bought the [Sennheiser MB 660 UC MS Wireless Headset](www.sennheiser.com/wireless-headset-office-phone-mb-660-uc-ms), which I highly recommend:
 
-![alt](/images/2017-08-24_Productivity_04.png){:height="600px" width="600px"}
+![alt](/images/2017-08-24_Productivity_04.jpg){:height="600px" width="600px"}
 
 Another device I recently bought and is quite happy with after a couple weeks of usage is [Blynclight](https://embrava.com/products/blync-light?variant=328886579) - a "busy light" which indicates with colors what your availability state is based on your Skype for Business status:
 
-![alt](/images/2017-08-24_Productivity_03.png)
+![alt](/images/2017-08-24_Productivity_03.jpg)
 
 
 # Summary
