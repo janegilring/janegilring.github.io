@@ -68,7 +68,7 @@ The high level steps is documented in the [Get access without a user](https://de
 
 # Walkthrough
 
-1. Add an application to Azure Active Directory  
+**Add an application to Azure Active Directory**  
 
 Detailed instructions is available in the [documentation](https://docs.microsoft.com/nb-no/azure/active-directory/develop/active-directory-integrating-applications#adding-an-application).
 
@@ -82,7 +82,7 @@ Detailed instructions is available in the [documentation](https://docs.microsoft
 
 When the application is created, notice the Application ID for the newly created application, this is the *ClientId* we will need to use in step 4.
 
-2. Configure application permissions for Microsoft Graph  
+**Configure application permissions for Microsoft Graph**  
 
 Next, go to *Required permissions* in the application's Settings:
 
@@ -98,7 +98,7 @@ In the *Select permissions*  blade, select the permissions necessary for the tas
 
 Click *Select* and *Done*
 
-3. Get administrator consent  
+**Get administrator consent**  
 
  Some permissions always require a tenant administrator's consent. Whether or not a permission requires admin consent is determined by the developer that published the resource, and can be found in the documentation for the resource. In this scenario, administrator consent is required for the permissions we selected in the previous step, hence we need to press the *Grant Permissions* button:
 ![alt](/images/2017-10-28_microsoft_graph_06.png)
@@ -106,7 +106,7 @@ Click *Select* and *Done*
 And then confirm by pressing *Yes*:
 ![alt](/images/2017-10-28_microsoft_graph_07.png)
 
-4. Get an access token  
+**Get an access token**  
 
 There is no need to re-invent the wheel, as the Microsoft Graph GitHub account has a repository containing [PowerShell Intune Samples](https://github.com/microsoftgraph/powershell-intune-samples) which we can use as a starting point :  
 
@@ -124,7 +124,7 @@ Here is an example on how to use this function to generate an access token:
 Sample output:  
 ![alt](/images/2017-10-28_microsoft_graph_12.png){:height="201px" width="600px"}
 
-5. Use the access token to call Microsoft Graph  
+**Use the access token to call Microsoft Graph**  
 
 Now that we have obtained a valid token, we are ready to consume it while performing an action against the Microsoft Graph API.
 
