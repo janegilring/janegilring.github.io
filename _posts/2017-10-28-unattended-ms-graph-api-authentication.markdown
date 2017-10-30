@@ -197,7 +197,7 @@ When the runbook is created, we can start it and supply a value for the UserPrin
 
 ![alt](/images/2017-10-28_microsoft_graph_17.png)
 
-If all goes well, we should see no errors logged an an Output similar to this:  
+If all goes well, we should see no errors logged and an Output similar to this:  
 
 ![alt](/images/2017-10-28_microsoft_graph_18.png)
 
@@ -215,7 +215,7 @@ We also had a look at current automation capabilities against the Microsoft Intu
 **Resources**
 
 - [Working with Intune in Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/intune_graph_overview)  
-    -Important note from the article (per October 2017): *Intune APIs under the /beta version in Microsoft Graph are in preview and are subject to change. Use of these APIs in production applications is not supported.*
+    **Important note from the article (per October 2017):** *Intune APIs under the /beta version in Microsoft Graph are in preview and are subject to change. Use of these APIs in production applications is not supported.*
 - [Integrating applications with Azure Active Directory](https://docs.microsoft.com/nb-no/azure/active-directory/develop/active-directory-integrating-applications)
 - [Using PowerShell and OAuth](https://foxdeploy.com/2015/11/02/using-powershell-and-oauth/)
 - [Azure Active Directory Authentication Library (ADAL)](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-libraries)
