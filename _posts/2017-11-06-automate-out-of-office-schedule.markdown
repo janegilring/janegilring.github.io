@@ -22,19 +22,19 @@ The article [Connect to Exchange Online PowerShell](https://technet.microsoft.co
 
 {% gist 93b3f751f851f239e746cec4088b2cdf %}
 
-Sample output:
-![alt](/images/2017-11-06_automate_oof_01.png){:height="291px" width="600px"}
+Sample output:  
+![alt](/images/2017-11-06_automate_oof_02.png){:height="291px" width="600px"}
 
-That is quite a lot of command, and many of them can be very useful. For example, we can change our photo using Get/Set-UserPhoto as well as view and clean up mobile devices using Get/Set-MobileDevice.
+That is quite a lot of commands, and many of them can be very useful. For example, we can change our photo using Get/Set-UserPhoto as well as view and clean up mobile devices using Get/Set-MobileDevice.
 
 What we are looking for is [Set-MailboxAutoReplyConfiguration](https://technet.microsoft.com/en-us/library/dd638217(v=exchg.160).aspx), which can perform the task we want to automate:
 
 {% gist 379d23507fc0b40960ebc8e9455bc875 %}
 
-Sample output:
+Sample output:  
 ![alt](/images/2017-11-06_automate_oof_03.png){:height="113px" width="600px"}
 
-We can also verify the result:
+We can also verify the result:  
 ![alt](/images/2017-11-06_automate_oof_04.png){:height="567px" width="600px"}
 
 The last piece of the puzzle is to schedule this script to run on the desired days of week.  
@@ -46,9 +46,9 @@ Sample runbook:
 
 The runbook can then the attached to a custom schedule in order to make it run on the week days we want:
 
-![alt](/images/2017-11-06_automate_oof_05.png){:height="1471px" width="600px"}
+![alt](/images/2017-11-06_automate_oof_05.png){:height="735px" width="300px"}
 
-![alt](/images/2017-11-06_automate_oof_06.png){:height="1461px" width="600px"}
+![alt](/images/2017-11-06_automate_oof_06.png){:height="730px" width="300px"}
 
 
 ## Summary
