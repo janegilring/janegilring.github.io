@@ -9,7 +9,7 @@ categories: Outlook,Exchange,PowerShell
 ## Challenge
 
 If you have an Exchange mailbox, you have the option to configure Out of Office messages when you are away from work:  
-![alt](/images/2017-11-06_automate_oof_01.png){:height="571px" width="600px"}
+![alt](/images/2017-11-06_automate_oof_01.png){:height="567px" width="600px"}
 
 Usually, the default options is sufficient: You configure a message, a time range, and you are all set.  
 In my scenario, I am having a paternity leave for the next 20 weeks where I will work 50% during the work week. This means I will have to turn Out of Office on and off several times every week.
