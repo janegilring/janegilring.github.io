@@ -43,9 +43,11 @@ The following Gist shows how to restrict Microsoft Exchange to only accept SMTP 
 {% gist e43b1146910458c774f85f253e2bc7e6 %}
 
 The IP addresses is available as an array, ready to be fed as input into Set-NetFirewallAddressFilter:
+
 ![alt](/images/2018-08-26_Office365_ACLs_02.png){:height="442px" width="405px"}
 
 After running the above example, the Windows Firewall rules is restricted to the Exchange Online Protection IP addresses:
+
 ![alt](/images/2018-08-26_Office365_ACLs_03.png){:height="575px" width="428px"}
 
 Keeping the firewall rules up-to-date is now as simple as scheduling the code shown in the Gist as a scheduled task (or ideally, from Azure Automation).
