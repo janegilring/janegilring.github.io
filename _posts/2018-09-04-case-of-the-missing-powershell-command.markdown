@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The case of the missing PowerShell command"
-date:   2018-04-09 12:30:00 +0200
+date:   2018-09-04 14:30:00 +0200
 comments: true
 categories: PowerShell,troubleshooting
 ---
