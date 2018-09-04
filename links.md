@@ -12,6 +12,8 @@ permalink: /links/
 | [Doug Finke](https://dfinke.github.io/) |
 | [Thomas Maurer](https://www.thomasmaurer.ch) |
 | [François-Xavier Cat (aka LazyWinAdmin)](https://lazywinadmin.github.io/) |
+| [Chris Dent](https://www.indented.co.uk/) |
+| [Josh Duffney](http://duffney.io/#blog) |
 
 # Microsoft resources
 
