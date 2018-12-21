@@ -6,7 +6,7 @@ comments: true
 categories: ActiveDirectory
 ---
 
-**Challenge**
+# Challenge
 
 Just like user accounts, computer accounts in Active Directory also has passwords that the computers  
  use to authenticate to the domain controllers in the domain. A difference is that we never see the  
@@ -21,7 +21,7 @@ of sync with the password stored locally on a computer. One of the most common r
  changed since the checkpoint was taken and thus break the secure channel against the Active  
  Directory domain. 
 
-**Solution**
+# Solution
 
 Let us have a look at one of these scenarios in a demo, and see how to resolve it:  
 In this demo, I have a domain-joined Windows computer where I have opened Windows PowerShell with   
@@ -75,7 +75,55 @@ see that the PasswordLastSet property is updated again in Active Directory:
 
 ![alt](/images/Test-ComputerSecureChannel_09.png)
 
-**Summary**
+## Other root causes
+
+*This section was added 2018-12-21*
+
+Sometimes the repair operation is not successful, which might be caused by other underlying root causes.
+
+One example is port exhaustion. I once ran into a situation where Test-ComputerSecureChannel returned false and  Test-ComputerSecureChannel -Repair failed with the error *The network path was not found.*
+
+The following was run to unjoin the machine from the domain:
+
+```powershell
+$LocalAdminCred = Get-Credential
+Remove-Computer -WorkgroupName TEMP -UnjoinDomainCredential $LocalAdminCred
+```
+
+Since the machine was running SQL Server and serving active connections we did not want to reboot, hence an immediate domain join was initiated:
+
+```powershell
+$DomainCred = Get-Credential
+Add-Computer -Credential $DomainCred -DomainName powershell.no
+```
+
+This failed with the following error:
+*Add-Computer : Computer 'SRV01' failed to join domain 'powershell.no' from its current workgroup 'TEMP' with following error message: The network path was not found.
+At line:1 char:1*
+
+After testing basics such as DNS, we noticed only FQDN lookups worked. Hence we added the domain name as a suffix on the network adapter.
+After that DNS queries worked as expected, and we re-tried the domain join:
+
+*Add-Computer : Computer 'SRV01' failed to join domain 'powershell.no' from its current workgroup 'TEMP' with following error message: The name limit for the local computer network adapter card was exceeded.
+At line:1 char:1*
+
+Accessing file shares such as \\server\share also failed with the same error.
+
+After doing some research on the error message, we noticed a huge output of netstat -a/Get-NetTCPConnection.
+
+netstat -ab revealed the process name which exhausted the range of dynamic ports.
+
+After some research after this incident it turns out it is also possible to get this information - including the username for the owning process - using PowerShell [credit](https://stackoverflow.com/questions/44509183/powershell-get-nettcpconnection-script-that-also-shows-username-process-name):
+
+```powershell
+Get-NetTCPConnection | 
+Select LocalAddress, LocalPort, RemoteAddress, RemotePort, State, OwningProcess , @{n="ProcessName";e={(Get-Process -Id $_.OwningProcess).ProcessName}} , @{n="UserName";e={(Get-Process -Id $_.OwningProcess -IncludeUserName).UserName}}| 
+Where {$_.State -eq"Established"} | Group-Object ProcessName -NoElement | Sort-Object -Property Count -Descending
+```
+
+After killing the problematic process the machine could successfully be re-joined to the domain - without any need for a reboot.
+
+# Summary
 
 Test-ComputerSecureChannel was introduced in PowerShell 2.0 (built-in to Windows 7/Server 2008 R2)   
 while Reset-ComputerMachinePassword was introduced in PowerShell 3.0 (built-in to Windows 8/Server  
