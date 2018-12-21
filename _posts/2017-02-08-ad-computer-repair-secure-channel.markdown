@@ -113,7 +113,7 @@ After doing some research on the error message, we noticed a huge output of nets
 
 netstat -ab revealed the process name which exhausted the range of dynamic ports.
 
-After some research after this incident it turns out it is also possible to get this information - including the username for the owning process - using PowerShell [credit](https://stackoverflow.com/questions/44509183/powershell-get-nettcpconnection-script-that-also-shows-username-process-name):
+After some research after this incident it turns out it is also possible to get this information - including the username for the owning process - using PowerShell ([credit](https://stackoverflow.com/questions/44509183/powershell-get-nettcpconnection-script-that-also-shows-username-process-name)):
 
 ```powershell
 Get-NetTCPConnection | 
