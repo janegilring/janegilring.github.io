@@ -14,7 +14,7 @@ Products and services he works with includes Microsoft infrastructure products s
 
 He is a multiple-year recipient of [Microsoft Most Valuable Professional Award](https://mvp.microsoft.com/en-us/PublicProfile/4030604?fullName=Jan%20Egil%20%20Ring) for his contributions in the Windows PowerShell, Cloud & Datacenter Management and Microsoft Azure technical communities.
 
-He speaks regularly at user groups and conferences, such as [Nordic Infrastructure Conference (NIC)](http://www.nicconf.com) and PowerShell Summit.
+He speaks regularly at user groups and conferences, such as [Nordic Infrastructure Conference (NIC)](http://www.nicconf.com), PowerShell Conference Europe and PowerShell Summit.
 
 He is a co-organizer of Azure User Group Norway, where he along with other community members host meetings and deliver content on a regular basis.
 
