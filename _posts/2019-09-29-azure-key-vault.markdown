@@ -20,7 +20,7 @@ In this article, we are going to see how we can leverage Azure Key Vault for sto
 
 ![alt](/images/azure-key-vault.png)
 
-Source, and more information: https://docs.microsoft.com/en-us/azure/key-vault/basic-concepts
+Source, and more information: [https://docs.microsoft.com/en-us/azure/key-vault/basic-concepts](https://docs.microsoft.com/en-us/azure/key-vault/basic-concepts).
 
 Usage is not limited to applications, as we can easily create and retrieve secrets using the Azure CLI, Azure PowerShell module or any other tool which can interact via a REST interface.
 
@@ -88,7 +88,7 @@ Example Azure Key Vault content:
 
 ![alt](/images/azure-key-vault-example.png)
 
-![alt](/images/azure-key-vault-example-02.png){:height="361px" width="300px"}
+![alt](/images/azure-key-vault-example-02.png){:height="481px" width="400px"}
 
 You might notice that there was no error logging configured in the runbook. The reason for that is we can simply [Forward job status and job streams from Automation to Azure Monitor logs](https://docs.microsoft.com/en-us/azure/automation/automation-manage-send-joblogs-log-analytics). After doing so, we can create alert rules in Azure Monitor to notify an action group responsible for monitoring when errors occurs in the runbook - either by SMS, e-mail, a Logic App sending notifications to Slack or Microsoft Teams and so on.
 
