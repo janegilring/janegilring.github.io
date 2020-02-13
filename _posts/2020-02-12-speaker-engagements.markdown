@@ -54,6 +54,8 @@ Check out the psconf.eu 2019 aftermovie to get a sense of the atmosphere:
 
 In the last couple of years, the Norwegian MVP community have arranged a community day where we share relevant information, targeted at Norwegian customers and organizations. The theme for this year is: "2020 what MS can do for you: Going beyond 365".
 
+![alt](/images/MicrosoftMVPAward.png)
+
 The event will happen on October 8th, shortly after Microsoft Ignite. Hence, I am planning to do a session with relevant news from there around automation.
 
 More information about the event is available [here](https://mvpdagen.no).
@@ -62,11 +64,15 @@ More information about the event is available [here](https://mvpdagen.no).
 
 I am involved as an organizer and board member in two user groups, the first being [Azure User Group Norway](https://www.meetup.com/en-AU/Azure-User-Group-Norway/). We have plans to host a round table event later this year, in addition to regular online meetings.
 
+![alt](/images/AUGNorway.jpeg)
+
 The second user group is being rebranded these days, more information will be published as soon as the new name is official - stay tuned!
 
 ## Microsoft Ignite
 
 Since I started attending IT conferences around 2008 I have always attended the smaller ones. They have been mostly PowerShell focused, but also some others like Microsoft Ignite On Tour. Hence, I have never attended the larger ones such as Microsoft Ignite (formerly Teched).
+
+![alt](/images/2020_Ignite_01.png)
 
 This year however, I plan to submit some proposals for [Microsoft Ignite](https://www.microsoft.com/en-us/ignite) (September 21–25, 2020) in New Orleans.
 
