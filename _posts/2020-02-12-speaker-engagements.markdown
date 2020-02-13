@@ -72,7 +72,7 @@ The second user group is being rebranded these days, more information will be pu
 
 Since I started attending IT conferences around 2008 I have always attended the smaller ones. They have been mostly PowerShell focused, but also some others like Microsoft Ignite On Tour. Hence, I have never attended the larger ones such as Microsoft Ignite (formerly Teched).
 
-![alt](/images/2020_Ignite_01.png)
+![alt](/images/2020_ignite_01.png)
 
 This year however, I plan to submit some proposals for [Microsoft Ignite](https://www.microsoft.com/en-us/ignite) (September 21–25, 2020) in New Orleans.
 
