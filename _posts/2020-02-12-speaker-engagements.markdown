@@ -10,7 +10,7 @@ In this article, I am going to tell you about my speaker and community engagemen
 
 ## Nordic Infrastructure Conference
 
-![alt](/images/20200206_NIC_welcome.png)
+![alt](/images/20200206_NIC_welcome.jpg)
 
 Nordic Infrastructure Conference was arranged for the 9th year in Oslo, Norway - February 6th - 7th, 2020.
 For several years the conference has brought both international and local speakers to Norway, sharing their knowledge and experience with the attendees.
