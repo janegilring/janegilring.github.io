@@ -10,6 +10,10 @@ categories: Azure, PowerShell, PIM, Privileged Identity Management, Azure AD
 
 > Privileged Identity Management (PIM) is a service in Azure Active Directory (Azure AD) that enables you to manage, control, and monitor access to important resources in your organization. These resources include resources in Azure AD, Azure, and other Microsoft Online Services such as Microsoft 365 or Microsoft Intune.
 
+![alt](/images/2020-10-10_PIM_overview.jpg)
+
+The feature provides just-in-time privileged access to Azure AD and Azure resources, and it can be customized per role to for exa ple require approval by designated approvers to activate privileged roles as well as enforce multi-factor authentication to activate any role.
+
 More information is available in the [product documentation](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure).
 
 If a user has been made eligible for a role, that means they can activate the role when they need to perform privileged tasks. The role can be either a role in Azure AD or a Role Based Access Control (RBAC) role in Azure on the Management Group, Subscription or Resource Group level.
@@ -97,8 +101,6 @@ Another dependency is Windows PowerShell, due to the fact that the AzureAD modul
 Eventually the functionality in the AzureAD module is expected to be ported to the new Microsoft Graph PowerShell module, which is currently being developed and is [available in preview](https://developer.microsoft.com/en-us/microsoft-365/blogs/microsoft-graph-powershell-preview-now-on-powershell-gallery/).
 
 PIMTools will be updated to work with PowerShell 6/7 when PIM commands is available in the new Graph-based module. Until then, Windows PowerShell will be required.
-
-![alt](/images/2020-08-11_CKA_01.pn){:height="347px" width="600px"}
 
 ## Useful resources
 
