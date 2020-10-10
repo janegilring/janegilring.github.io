@@ -1,0 +1,103 @@
+---
+layout: post
+title:  "Introducing the Privileged Identity Management Tools PowerShell module (PIMTools)"
+date:   2020-10-10 09:00:00 +0200
+comments: true
+categories: Azure, PowerShell, PIM, Privileged Identity Management, Azure AD
+---
+
+# Introduction
+
+> Privileged Identity Management (PIM) is a service in Azure Active Directory (Azure AD) that enables you to manage, control, and monitor access to important resources in your organization. These resources include resources in Azure AD, Azure, and other Microsoft Online Services such as Microsoft 365 or Microsoft Intune.
+
+More information is available in the [product documentation](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure).
+
+If a user has been made eligible for a role, that means they can activate the role when they need to perform privileged tasks. The role can be either a role in Azure AD or a Role Based Access Control (RBAC) role in Azure on the Management Group, Subscription or Resource Group level.
+
+The manual way to activate an eligible role is to:
+1. Sign in to the **Azure portal**
+2. Open **Azure AD Privileged Identity Management**
+3. Select **My roles**, in the Azure resource or Azure AD roles list
+4. Find the role you want to activate
+5. Select **Activate** to open the Activate page
+6. In the **Reason** box, enter the reason for the activation request
+7. Select **Activate**.
+
+A common activation time is 8 hours, meaning the role should be active for the duration of the working hours. This means the steps outlined above needs to be performed manually every day.
+
+## The Privileged Identity Management Tools PowerShell module (PIMTools)
+
+PIMTools is a PowerShell module with commands for working with Azure AD Privileged Identity Management, initally commands for activating Azure AD and Azure resource roles.
+
+### Getting started
+
+1. *Start Windows PowerShell*
+
+Simply press the Start button and search for "PowerShell". You will likely get two hits:
+"Windows PowerShell" and "Windows PowerShell ISE". For more modern console and editor features you may also want to check out [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/) and [Visual Studio Code](https://code.visualstudio.com/).
+
+2. *Allow PowerShell scripts to be executed*
+
+PowerShell has a feature called "execution policy" which by default is set to "Restricted",
+meaning that no scripts is allowed to run. In the context of this article, I will recommend
+to set the execution policy to "RemoteSigned". This means that you can run scripts locally
+without having to sign it with a digital signature.
+
+```powershell
+# Check current settings
+Get-ExecutionPolicy
+
+# If the execution policy is set to Restricted, run the following command to configure the execution policy to RemoteSigned
+Set-ExecutionPolicy RemoteSigned
+
+# Make sure you start PowerShell with "Run As Administrator" before running the command. Alternatively, run the following if you do not have Administrator privileges:
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+3. *Install the PIMTools module*
+
+The module is available from the [PowerShell Gallery](https://www.powershellgallery.com/packages/PIMTools/), meaning we can install it by simply running the following:
+```powershell
+Install-Module -Name PIMTools
+```
+
+If this is the first time you run this command, you will be prompted to install NuGet which is being
+ used under the hood to interact with the PowerShell Gallery. Answer *Yes* when prompted to install
+this prerequisite. Next, you will be warned that the PowerShell Gallery by default is configured
+as an untrusted source. Answer *Yes* to acknowledge this and install the module.
+
+Now the module is installed and is ready to be used.
+
+
+4. **Example usage**
+
+```powershell
+# Elevate an eligble Azure AD role
+New-AzureADPIMRequest -RoleName 'Global Administrator'
+
+# Elevate an eligble Azure role
+New-AzurePIMRequest -RoleName Owner -ResourceName IT -ResourceType ManagementGroup
+
+New-AzurePIMRequest -RoleName Contributor -ResourceName MySubscription -ResourceType Subscription
+```
+
+Note that you need to refresh any existing open browser sessions in order to refresh the access token with the elevated permissions.
+
+After you have installed the module, you can later on run the following to get any new version which may contain bug fixes and new functionality:
+```powershell
+Update-Module -Name PIMTools
+```
+
+Per October 2020, the PowerShell commands to work with PIM is included only in the Public Preview release of Azure Active Directory PowerShell Module, hence this is a prerequisite you will be prompted to install if it is not present. When the PIM commands moves into the Generally Available Azure AD module, the prerequisite requirement will be updated.
+Another dependency is Windows PowerShell, due to the fact that the AzureAD module relies on the full .NET Framework and hence does not support PowerShell 6/7.
+Eventually the functionality in the AzureAD module is expected to be ported to the new Microsoft Graph PowerShell module, which is currently being developed and is [available in preview](https://developer.microsoft.com/en-us/microsoft-365/blogs/microsoft-graph-powershell-preview-now-on-powershell-gallery/).
+
+PIMTools will be updated to work with PowerShell 6/7 when PIM commands is available in the new Graph-based module. Until then, Windows PowerShell will be required.
+
+![alt](/images/2020-08-11_CKA_01.pn){:height="347px" width="600px"}
+
+## Useful resources
+
+- [Privileged Identity Management documentation](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure).
+- [Azure AD PowerShell for Azure Resources in PIM
+](http://www.anujchaudhary.com/2020/09/azure-ad-powershell-for-azure-resources.html)
