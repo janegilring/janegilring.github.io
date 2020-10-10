@@ -12,7 +12,7 @@ categories: Azure, PowerShell, PIM, Privileged Identity Management, Azure AD
 
 ![alt](/images/2020-10-10_PIM_overview.jpg)
 
-The feature provides just-in-time privileged access to Azure AD and Azure resources, and it can be customized per role to for exa ple require approval by designated approvers to activate privileged roles as well as enforce multi-factor authentication to activate any role.
+The feature provides just-in-time privileged access to Azure AD and Azure resources, and it can be customized per role to for example require approval by designated approvers as well as enforce multi-factor authentication when activating a role.
 
 More information is available in the [product documentation](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure).
 
@@ -96,10 +96,12 @@ If you encounter any problems, please submit an issue on [the project's GitHub p
 
 ### Remarks
 
-Per October 2020, the PowerShell commands to work with PIM is included only in the Public Preview release of Azure Active Directory PowerShell Module, hence this is a prerequisite you will be prompted to install if it is not present. When the PIM commands moves into the Generally Available Azure AD module, the prerequisite requirement will be updated.
-Another dependency is Windows PowerShell, due to the fact that the AzureAD module relies on the full .NET Framework and hence does not support PowerShell 6/7.
-Eventually the functionality in the AzureAD module is expected to be ported to the new Microsoft Graph PowerShell module, which is currently being developed and is [available in preview](https://developer.microsoft.com/en-us/microsoft-365/blogs/microsoft-graph-powershell-preview-now-on-powershell-gallery/).
+- When activating an Azure role, the IDs for resources and role defintions is used. In order for the PIMTools module to lookup these IDs based on the displayname of the roles (for example Owner or Contributor) and resources (for example a Management Group or subscription), the user calling the commands must have the Reader role for the roles they are trying to elevate to.
+This is not added by default in PIM, but is common (at least among the customers I work with) to grant Reader access to admin accounts - and require elevation using PIM in order to activate any other privileges. Hence, this is a prerequisite for activating Azure roles using PIMTools.
 
+- Per October 2020, the PowerShell commands to work with PIM is included only in the Public Preview release of Azure Active Directory PowerShell Module, hence this is a prerequisite you will be prompted to install if it is not present. When the PIM commands moves into the Generally Available Azure AD module, the prerequisite requirement will be updated.
+Another dependency is Windows PowerShell, due to the fact that the AzureAD module relies on the full .NET Framework and hence does not support PowerShell 6/7.
+Eventually the functionality in the AzureAD module is expected to be ported to the new Microsoft Graph PowerShell module, which is currently being developed and is [available in preview](https://developer.microsoft.com/en-us/microsoft-365/blogs/microsoft-graph-powershell-preview-now-on-powershell-gallery/). 
 PIMTools will be updated to work with PowerShell 6/7 when PIM commands is available in the new Graph-based module. Until then, Windows PowerShell will be required.
 
 ## Useful resources
