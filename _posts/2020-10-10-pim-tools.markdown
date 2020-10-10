@@ -31,12 +31,12 @@ PIMTools is a PowerShell module with commands for working with Azure AD Privileg
 
 ### Getting started
 
-1. *Start Windows PowerShell*
+#### 1 - Start Windows PowerShell
 
 Simply press the Start button and search for "PowerShell". You will likely get two hits:
 "Windows PowerShell" and "Windows PowerShell ISE". For more modern console and editor features you may also want to check out [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/) and [Visual Studio Code](https://code.visualstudio.com/).
 
-2. *Allow PowerShell scripts to be executed*
+#### 2 - Allow PowerShell scripts to be executed
 
 PowerShell has a feature called "execution policy" which by default is set to "Restricted",
 meaning that no scripts is allowed to run. In the context of this article, I will recommend
@@ -54,7 +54,7 @@ Set-ExecutionPolicy RemoteSigned
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-3. *Install the PIMTools module*
+#### 3 - Install the PIMTools module
 
 The module is available from the [PowerShell Gallery](https://www.powershellgallery.com/packages/PIMTools/), meaning we can install it by simply running the following:
 ```powershell
@@ -69,7 +69,7 @@ as an untrusted source. Answer *Yes* to acknowledge this and install the module.
 Now the module is installed and is ready to be used.
 
 
-4. **Example usage**
+#### 4 - Example usage
 
 ```powershell
 # Elevate an eligble Azure AD role
