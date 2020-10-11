@@ -85,6 +85,8 @@ New-AzurePIMRequest -RoleName Owner -ResourceName IT -ResourceType ManagementGro
 New-AzurePIMRequest -RoleName Contributor -ResourceName MySubscription -ResourceType Subscription
 ```
 
+![alt](/images/2020-10-10-PIMTools.gif)
+
 Note that you need to refresh any existing open browser sessions in order to refresh the access token with the elevated permissions.
 
 After you have installed the module, you can later on run the following to get any new version which may contain bug fixes and new functionality:
@@ -101,7 +103,7 @@ This is not added by default in PIM, but is common (at least among the customers
 
 - Per October 2020, the PowerShell commands to work with PIM is included only in the Public Preview release of Azure Active Directory PowerShell Module, hence this is a prerequisite you will be prompted to install if it is not present. When the PIM commands moves into the Generally Available Azure AD module, the prerequisite requirement will be updated.
 Another dependency is Windows PowerShell, due to the fact that the AzureAD module relies on the full .NET Framework and hence does not support PowerShell 6/7.
-Eventually the functionality in the AzureAD module is expected to be ported to the new Microsoft Graph PowerShell module, which is currently being developed and is [available in preview](https://developer.microsoft.com/en-us/microsoft-365/blogs/microsoft-graph-powershell-preview-now-on-powershell-gallery/). 
+Eventually the functionality in the AzureAD module is expected to be ported to the new Microsoft Graph PowerShell module, which is currently being developed and is [available in preview](https://developer.microsoft.com/en-us/microsoft-365/blogs/microsoft-graph-powershell-preview-now-on-powershell-gallery/).
 PIMTools will be updated to work with PowerShell 6/7 when PIM commands is available in the new Graph-based module. Until then, Windows PowerShell will be required.
 
 ## Useful resources
