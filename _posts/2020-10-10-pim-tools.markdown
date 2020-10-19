@@ -62,7 +62,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 The module is available from the [PowerShell Gallery](https://www.powershellgallery.com/packages/PIMTools/), meaning we can install it by simply running the following:
 ```powershell
-Install-Module -Name PIMTools
+Install-Module -Name PIMTools -Scope CurrentUser
 ```
 
 If this is the first time you run this command, you will be prompted to install NuGet which is being
