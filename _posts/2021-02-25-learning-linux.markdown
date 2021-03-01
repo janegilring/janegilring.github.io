@@ -6,7 +6,7 @@ comments: true
 categories: Linux, PowerShell, DevOps
 ---
 
-# Getting into the Linux world as a PowerShell user
+# Introduction
 
 Up until the past couple of years or so I have mainly been working with Windows-based systems. However, as mentioned in a previous post - when technology evolves there is a need to adapt - and getting into the Linux side of things is one key area given the frequent use of Linux in modern technologies such as containers.
 
