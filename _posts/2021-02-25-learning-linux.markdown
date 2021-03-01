@@ -18,7 +18,7 @@ I think one advantage before starting is that I have been working a lot with Pow
 
 I have some experience with PowerShell on Linux, deploying it with SSH-remoting enabled at a customer. This enables cross-platform remoting and is very cool from a technology perspective. Here is one example:
 
-![alt](/images/2021-02-25-ps-remoting.gif){:height="100px" width="600px"}
+![alt](/images/2021-02-25-ps-remoting.gif)
 
 Knowing PowerShell - which is object-oriented, much like the Windows operating system is - is fundamentally very different from Linux - which is largely based on defining configurations in text files. Even system information such as open handles by a process is exposed as text-files using a pseudo file-system.
 
@@ -54,7 +54,7 @@ In this example, the gray text after the cursor is Predictive text based on eith
 
 Here is a practical example where I first start typing out the Enter-PSSession command and then change to typing the name of a computer I want to connect to:
 
-![alt](/images/2021-02-25-intellisense-demo.gif){:height="100px" width="600px"}
+![alt](/images/2021-02-25-intellisense-demo.gif)
 
 Getting all of the command history where the text has been used before is very conventient.
 
@@ -71,7 +71,7 @@ Get-InstalledPackage | Where-Object { $_.name -match "libc"}
 
 As we can see, as a PowerShell user one can make use of existing knowledge for filtering output. I think this is a perfect example of what Jeffrey Snover (Microsoft Technical Fellow and "father" of PowerShell) and the PowerShell has been aiming for since the beginning:
 
-![alt](/images/2021-02-25-snover-quote.png){:height="169px" width="600px"}
+![alt](/images/2021-02-25-snover-quote.png)
 
 Although this is great, we can`t assume that PowerShell is available on every Linux system we get manage - hence I believe it is still needed to know some basics of the native tooling. Such as text processing utilities like grep, sed and awk. Another example is container images. They are often stripped down as much as possible to minimize footprint - even tools we take for granted such as ping or ip might be excluded. Hence, we need to use the tools available if doing some interactive debugging in such a  scenario.
 
