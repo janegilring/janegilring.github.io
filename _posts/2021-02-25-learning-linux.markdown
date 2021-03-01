@@ -8,7 +8,9 @@ categories: Linux, PowerShell, DevOps
 
 # Introduction
 
-Up until the past couple of years or so I have mainly been working with Windows-based systems. However, as mentioned in a previous post - when technology evolves there is a need to adapt - and getting into the Linux side of things is one key area given the frequent use of Linux in modern technologies such as containers.
+Up until the past couple of years or so I have mainly been working with Windows-based systems. However, as mentioned in a [previous post](https://www.powershell.no/devops,/kubernetes,/docker,/containers/2020/08/11/certified-kubernetes-administrator.html) - when technology evolves, there is a need to adapt - and getting into the Linux side of things is one key area given the frequent use of Linux in modern technologies such as containers.
+
+![alt](/images/2021-02-25-ps_tux.jpg)
 
 Since starting working more and more with containers and Kubernetes, I have been exposed more and more to Linux and learned some fundamentals such as looking into logs and managing services. As time passed I found a need to dig a little deeper and learn the basics on Linux system administration, as these skills is useful both when working inside containers but also in general as we see more and more greenfield deployments being based on Linux server distributions rather than Windows Server.
 
