@@ -64,7 +64,7 @@ See the blog post for additional details on how to install and configure Predict
 
 As noted in the article, Predictive Intellisense works on Windows PowerShell 5.1 and PowerShell 7.0+, meaning it also works on Linux and macOS. Hence, I am also using this everywhere I use PowerShell - such as Azure Cloud Shell and WSL2 (Windows Subsystem for Linux).
 
-## Crescendo
+### Crescendo
 Another exciting new module is [PowerShell Crescendo](https://devblogs.microsoft.com/powershell/announcing-powershell-crescendo-preview-1/), a framework to rapidly develop PowerShell cmdlets for native commands, regardless of platform. Crescendo provides the tools to easily wrap a native command to gain the benefits of PowerShell cmdlets (such as object orientation). As noted in the article, this means that the output objects allow you to take advantage of all the post processing tools such as Sort-Object and Where-Object.
 An example provided in the article on the PowerShell team blog is a wrapper around the Linux apt command:
 ```powershell
@@ -77,7 +77,7 @@ As we can see, as a PowerShell user one can make use of existing knowledge for f
 
 Although this is great, we can`t assume that PowerShell is available on every Linux system we get manage - hence I believe it is still needed to know some basics of the native tooling. Such as text processing utilities like grep, sed and awk. Another example is container images. They are often stripped down as much as possible to minimize footprint - even tools we take for granted such as ping or ip might be excluded. Hence, we need to use the tools available if doing some interactive debugging in such a  scenario.
 
-## History
+### History
 
 Another fascinating aspect of learning Linux is all of the history in the operating system. An example is the archiving utility tar. Although its name is short for tape archiver, it is still used today where tape systems is almost non-existent. Now it is used to archive and extract archives to and from any media - as long as it have a supported file system.
 
