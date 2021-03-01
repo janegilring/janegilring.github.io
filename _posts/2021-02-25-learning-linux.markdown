@@ -136,7 +136,8 @@ I had been using Windows Subsystem for Linux (WSL) for a couple of years, so I c
 However, in order to be able to perform all the labs in the course I also needed some regular virtual machines, so I spun up 3 different distros in Azure in order to be able to try out the different package managers and such:
 
 ```powershell
-Get-AzVM
+C:\> Get-AzVM
+
 ResourceGroupName        Name   Location          VmSize  OsType
 -----------------        ----   --------          ------  ------
 COMPUTE-RG         RHEL-AZ-01 norwayeast Standard_D2s_v3   Linux
