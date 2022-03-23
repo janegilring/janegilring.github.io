@@ -75,11 +75,11 @@ As we can see, as a PowerShell user one can make use of existing knowledge for f
 
 ![alt](/images/2021-02-25-snover-quote.png)
 
-Although this is great, we can`t assume that PowerShell is available on every Linux system we get manage - hence I believe it is still needed to know some basics of the native tooling. Such as text processing utilities like grep, sed and awk. Another example is container images. They are often stripped down as much as possible to minimize footprint - even tools we take for granted such as ping or ip might be excluded. Hence, we need to use the tools available if doing some interactive debugging in such a  scenario.
+Although this is great, we can`t assume that PowerShell is available on every Linux system we manage - hence I believe it is still needed to know some basics of the native tooling. Such as text processing utilities like grep, sed and awk. Another example is container images. They are often stripped down as much as possible to minimize footprint - even tools we take for granted such as ping or ip might be excluded. Hence, we need to use the tools available if doing some interactive debugging in such a  scenario.
 
 ### History
 
-Another fascinating aspect of learning Linux is all of the history in the operating system. An example is the archiving utility tar. Although its name is short for tape archiver, it is still used today where tape systems is almost non-existent. Now it is used to archive and extract archives to and from any media - as long as it have a supported file system.
+A fascinating aspect of learning Linux is all of the history in the operating system. An example is the archiving utility tar. Although its name is short for tape archiver, it is still used today where tape systems is almost non-existent. Now it is used to archive and extract archives to and from any media - as long as it have a supported file system.
 
 Another example is the previously mentioned sed utility. According to [Wikipedia](https://en.wikipedia.org/wiki/Sed), it was was developed from 1973 to 1974 by Lee E. McMahon of Bell Labs, and is available today for most operating systems. By the time of this writing, that is almost 50 years later. I find this very interesting, that a built-in tool is still actively developed and highly used so long after it was initially developed. In the fast-paced world of computing, 50 years is like centuries!
 
