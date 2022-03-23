@@ -65,13 +65,13 @@ See the blog post for additional details on how to install and configure Predict
 As noted in the article, Predictive Intellisense works on Windows PowerShell 5.1 and PowerShell 7.0+, meaning it also works on Linux and macOS. Hence, I am also using this everywhere I use PowerShell - such as Azure Cloud Shell and WSL2 (Windows Subsystem for Linux).
 
 ### Crescendo
-Another exciting new module is [PowerShell Crescendo](https://devblogs.microsoft.com/powershell/announcing-powershell-crescendo-preview-1/), a framework to rapidly develop PowerShell cmdlets for native commands, regardless of platform. Crescendo provides the tools to easily wrap a native command to gain the benefits of PowerShell cmdlets (such as object orientation). As noted in the article, this means that the output objects allow you to take advantage of all the post processing tools such as Sort-Object and Where-Object.
+Another exciting new module is [PowerShell Crescendo](https://devblogs.microsoft.com/powershell/announcing-powershell-crescendo-general-availability-ga/s), a framework to rapidly develop PowerShell cmdlets for native commands, regardless of platform. Crescendo provides the tools to easily wrap a native command to gain the benefits of PowerShell cmdlets (such as object orientation). As noted in the article, this means that the output objects allow you to take advantage of all the post processing tools such as Sort-Object and Where-Object.
 An example provided in the article on the PowerShell team blog is a wrapper around the Linux apt command:
 ```powershell
 Get-InstalledPackage | Where-Object { $_.name -match "libc"}
 ```
 
-As we can see, as a PowerShell user one can make use of existing knowledge for filtering output. I think this is a perfect example of what Jeffrey Snover (Microsoft Technical Fellow and "father" of PowerShell) and the PowerShell has been aiming for since the beginning:
+As we can see, as a PowerShell user one can make use of existing knowledge for filtering output. I think this is a perfect example of what Jeffrey Snover (Microsoft Technical Fellow and "father" of PowerShell) and the PowerShell team has been aiming for since the beginning:
 
 ![alt](/images/2021-02-25-snover-quote.png)
 
