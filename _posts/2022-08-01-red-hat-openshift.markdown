@@ -86,13 +86,17 @@ The routes can also be managed via the Web Console if desired:
 
 ### Registry
 
-As oposed to Kubernetes, Red Hat OCP by default provides an internal container registry for storing and pulling container images - eliminating the need for provisioning a registry ourselfes.
+As oposed to Kubernetes, Red Hat OCP by default provides an internal container registry for storing and pulling container images from - eliminating the need for provisioning a registry ourselfes.
 
 ### Source-to-Image (S2I)
 
 This is a tool to make it possible for developers to deploy their applications from source code - without needing any knowledge about Dockerfiles or container images.
 
 Built on a base image - code from a specified Git repository is injected into image and a new image which can run the application is produced by a build pipeline. Several pre-built base images is available, and one may choose based on the language or framework being used in the application being built.
+
+![alt](/images/2022-07-31-rh-ocp-s2i.jpg){:height="600px" width="225px"}
+
+Image credit: [Red Hat](https://cloud.redhat.com/blog/guide-to-openshift-pipelines-part-2-using-source-2-image-build-in-tekton)
 
 Although one might prefer to use traditional methods to build container images based on Dockerfiles, the S2I tool has a number of advantages:
 
