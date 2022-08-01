@@ -19,7 +19,7 @@ In this post, I am going to share my perspectives based on my learnings so far.
 Based on Kubernetes - the defacto standard for orchestrating containers - OpenShift Container Platform adds additional functionality and features.
 It is based on Red Hat Enterprise Linux CoreOS as the foundational operating system for the control plane and worker nodes.
 
-![alt](/images/2022-07-31-rh-ocp-architecture.png){:height="600px" width="483px"}
+![alt](/images/2022-07-31-rh-ocp-architecture.png){:height="483px" width="600px"}
 
 Image credit: [Red Hat](https://docs.openshift.com/container-platform/4.10/welcome/oke_about.html)
 
@@ -37,7 +37,7 @@ The easiest way to get started is probably using a public cloud offering, such a
 
 The lifecycle of a Red Hat OCP cluster is described by Red Hat as follows:
 
-![alt](/images/2022-07-31-rh-ocp-lifecycle.png){:height="600px" width="213px"}
+![alt](/images/2022-07-31-rh-ocp-lifecycle.png){:height="213px" width="600px"}
 
 Image credit: [Red Hat](https://docs.openshift.com/container-platform/4.10/welcome/oke_about.html)
 
@@ -49,7 +49,7 @@ When a cluster has been provisioned and is ready for use by developers - which w
 
 A web-based interface provided by the Red Hat OCP cluster that allows developers and administrators to interact with cluster resources.
 
-![alt](/images/2022-07-31-rh-ocp-web-console.jpg){:height="600px" width="488px"}
+![alt](/images/2022-07-31-rh-ocp-web-console.jpg){:height="488px" width="600px"}
 
 ### Project
 
@@ -82,7 +82,7 @@ However, this can be overriden if needed:
 
 The routes can also be managed via the Web Console if desired:
 
-![alt](/images/2022-07-31-rh-ocp-web-console-02.jpg){:height="600px" width="299px"}
+![alt](/images/2022-07-31-rh-ocp-web-console-02.jpg){:height="299px" width="600px"}
 
 ### Registry
 
@@ -98,7 +98,7 @@ This is a tool to make it possible for developers to deploy their applications f
 
 Built on a base image - code from a specified Git repository is injected into image and a new image which can run the application is produced by a build pipeline. Several pre-built base images is available, and one may choose based on the language or framework being used in the application being built.
 
-![alt](/images/2022-07-31-rh-ocp-s2i.jpg){:height="600px" width="225px"}
+![alt](/images/2022-07-31-rh-ocp-s2i.jpg){:height="225px" width="600px"}
 
 Image credit: [Red Hat](https://cloud.redhat.com/blog/guide-to-openshift-pipelines-part-2-using-source-2-image-build-in-tekton)
 
@@ -160,13 +160,13 @@ Management tools such as the console and API is part of a common Red Hat infrast
 
 Building on the previous topic of Operators, Red Hat OpenShift Virtualization is a great example of leveraging common infrastructure. It is an Operator based on KubeVirt - a Kubernetes Virtualization technology that makes it possible to run and manage VMs side-by-side with containers. These VMs can be managed both as regular Kubernetes objects via the API as well as via the console:
 
-![alt](/images/2022-07-31-rh-ocp-vm-virtualization-02.jpeg){:height="600px" width="258px"}
+![alt](/images/2022-07-31-rh-ocp-vm-virtualization-02.jpeg){:height="258px" width="600px"}
 
 Image credit: [Red Hat](https://www.redhat.com/en/technologies/cloud-computing/openshift/virtualization)
 
 Under the hood it is leveraging Linux Kernel-based Virtual Machine (KVM), a Linux Kernel hypervisor, within a container.
 
-![alt](/images/2022-07-31-rh-ocp-vm-virtualization.png){:height="600px" width="211px"}
+![alt](/images/2022-07-31-rh-ocp-vm-virtualization.png){:height="211px" width="600px"}
 
 Image credit: [Red Hat](https://www.redhat.com/en/technologies/cloud-computing/openshift/virtualization)
 
