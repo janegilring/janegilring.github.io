@@ -249,3 +249,4 @@ The trick suggested in the course is to temporarily access some of these missing
 - [Understanding OpenShift Pipelines](https://docs.openshift.com/container-platform/4.10/cicd/pipelines/understanding-openshift-pipelines.html)
 - [Red Hat OpenShift support for Windows Containers overview](https://docs.openshift.com/container-platform/4.10/windows_containers/index.html)
 - [OpenShift Container Platform cluster monitoring, logging, and Telemetry](https://docs.openshift.com/container-platform/4.10/virt/logging_events_monitoring/virt-openshift-cluster-monitoring.html)
+- [A Guide to Ingress Controllers for Azure Red Hat OpenShift](https://cloud.redhat.com/blog/a-guide-to-controller-ingress-for-azure-red-hat-openshift)
