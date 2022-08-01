@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Introduction to Red Hat OpenShift Container Platform"
-date:   2022-08-01 17:00:00 +0200
+date:   2022-08-01 15:00:00 +0200
 comments: true
 categories: Linux, containers, DevOps
 ---
@@ -232,6 +232,7 @@ If you do not have access to a Red Hat Learning Subscription with access to thei
 
 Another alternative is the [OpenShift Sandbox](https://developers.redhat.com/developer-sandbox), which provides 30 days of free access to an OpenShift cluster.
 
+Back to the exam, I did pass on my first attempt (a score of 269 of 300, where the minimum required is 210). However, time management is critical as usual in these hands-on exams where you get access to a virtual machine where all you have is a browser windows with the assignments as well as a terminal. Being stuck on one of the initial tasks really puts pressure on you, and while I was doubtful during the first 30 minutes - I managed to pull it off at the end.
 ### Tips and tricks
 
 One neat trick I learned from the DO180 course was the idea of bringing local tooling into containers during troubleshooting.
@@ -240,6 +241,14 @@ I suppose you also have been in a situation where you are opening a terminal ses
 The trick suggested in the course is to temporarily access some of these missing commands by mounting the host binaries folders, such as /bin, /sbin, and /lib, as volumes inside the container:
 
 `podman run -it -v /bin:/bin image /bin/bash`
+
+## Summary
+
+Having seen and experienced the additional value Red Hat brings to the table on top of vanilla Kubernetes has been very interesting, such as learning about the Source-to-Image (S2I) feature.
+
+Especially for those already in the Red Hat ecosystem - it should be a no-brainer on which container platform to choose.
+
+For others, your mileage may vary as always - everyone has different needs and requirements. Regardless, I will for sure bring this alternative to the table in my container workshops.
 
 ## Useful resources
 
