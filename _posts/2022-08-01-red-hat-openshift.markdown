@@ -228,7 +228,9 @@ The goal for me in addition to getting hands-on experience was taking the [EX180
 
 I found the course to be really well. Getting to start locally on a workstation using podman and creating Dockerfiles (or Containerfiles, as they are called in Red Hat/podman terminology) - evolving the same application to be built highly available in an OpenShift cluster is very useful in order to understand how everything works.
 
-If you do not have access to a Red Hat Learning Subscription with access to their courses, an alternative to get hands-on experience is to set up [Red Hat OpenShift Local](https://developers.redhat.com/products/openshift-local/getting-started) (formerly Red Hat CodeReady Containers) on your local computer. Combined with other learning resources such as the product documentation and other online resources.
+If you do not have access to a Red Hat Learning Subscription with access to their courses, an alternative to get hands-on experience is to set up [Red Hat OpenShift Local](https://developers.redhat.com/products/openshift-local/getting-started) (formerly Red Hat CodeReady Containers) on your local computer.
+
+Another alternative is the [OpenShift Sandbox](https://developers.redhat.com/developer-sandbox), which provides 30 days of free access to an OpenShift cluster.
 
 ### Tips and tricks
 
