@@ -88,6 +88,10 @@ The routes can also be managed via the Web Console if desired:
 
 As oposed to Kubernetes, Red Hat OCP by default provides an internal container registry for storing and pulling container images from - eliminating the need for provisioning a registry ourselfes.
 
+### Continuous integration and continuous delivery
+
+Part of Red Hat OCP is OpenShift Pipelines, a continuous integration and continuous delivery (CI/CD) solution based on Kubernetes resources. It uses [Tekton](https://tekton.dev) building blocks to automate builds and deployments, which is running in isolated containers.
+
 ### Source-to-Image (S2I)
 
 This is a tool to make it possible for developers to deploy their applications from source code - without needing any knowledge about Dockerfiles or container images.
