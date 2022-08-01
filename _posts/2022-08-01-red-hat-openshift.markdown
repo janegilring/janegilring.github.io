@@ -172,9 +172,17 @@ Image credit: [Red Hat](https://www.redhat.com/en/technologies/cloud-computing/o
 
 This makes it possible to run both modernized container workloads and classic workloads which haven't or for some reason can't be containerized - in the same environment.
 
+### Monitoring and logging
+
+Red Hat OCP includes a pre-configured, pre-installed, and self-updating monitoring stack that provides monitoring for core platform components. This is based on the Prometheus open source project and its wider eco-system.
+
+A set of alerts are included by default that can immediately notify cluster administrators about issues within a cluster. Default dashboards in the web console include visual representations of cluster metrics.
+
+It is also possible to enable monitoring for user-defined projects, but unlike the core cluster resources - this is not enabled by default.
+
 # Learning resources
 
-In order to get an understanding of Red Hat OCP, I went through the course [DO180 Red Hat OpenShift I: Containers & Kubernetes](https://rol.redhat.com/rol/app/courses/do180vc-4.10) - which is highly recommended if you aim to get deeper knowledge and some hands-on experience.
+In order to get an understanding of Red Hat OCP, I went through the course [DO180 Red Hat OpenShift I: Containers & Kubernetes](https://rol.redhat.com/rol/app/courses/do180vc-4.10). This is highly recommended if you aim to get deeper knowledge and some hands-on experience.
 
 The goal for me in addition to getting hands-on experience was taking the [EX180 Red Hat Certified Specialist in Containers and Kubernetes exam](https://www.redhat.com/en/services/training/ex180-red-hat-certified-specialist-containers-kubernetes-exam?section=Overview), which has the following objectives:
 
@@ -238,3 +246,6 @@ The trick suggested in the course is to temporarily access some of these missing
 - [Visual Studio Code Extension: OpenShift Connector](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-openshift-connector)
 - [Visual Studio Code Extension: Tekton Pipelines (used for S2I)](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-tekton-pipelines)
 - [Deploying a Windows Server 2019 virtual machine using OpenShift virtualization](https://www.youtube.com/watch?v=Kx110kqoHo0)
+- [Understanding OpenShift Pipelines](https://docs.openshift.com/container-platform/4.10/cicd/pipelines/understanding-openshift-pipelines.html)
+- [Red Hat OpenShift support for Windows Containers overview](https://docs.openshift.com/container-platform/4.10/windows_containers/index.html)
+- [OpenShift Container Platform cluster monitoring, logging, and Telemetry](https://docs.openshift.com/container-platform/4.10/virt/logging_events_monitoring/virt-openshift-cluster-monitoring.html)
